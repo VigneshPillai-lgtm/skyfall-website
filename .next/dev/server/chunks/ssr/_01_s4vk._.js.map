@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/vikky/SKYFALL/skyfall-app/src/app/page.tsx"],"sourcesContent":["\"use client\";\n\nexport default function Home() {\n  return (\n    <div style={{ color: 'white', padding: '50px', fontSize: '32px', background: '#000', minHeight: '100vh' }}>\n      HELLO! THE DEVELOPMENT SERVER IS WORKING.\n    </div>\n  );\n}\n"],"names":["Home","style","color","padding","fontSize","background","minHeight"],"mappings":";;;;;AAAA;;AAEe,SAASA;IACtB,qBACE,8OAAC;QAAIC,OAAO;YAAEC,OAAO;YAASC,SAAS;YAAQC,UAAU;YAAQC,YAAY;YAAQC,WAAW;QAAQ;kBAAG;;;;;;AAI/G"}},
+    {"offset": {"line": 31, "column": 0}, "map": {"version":3,"sources":["file:///Users/vikky/SKYFALL/skyfall-app/node_modules/next/src/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.ts"],"sourcesContent":["module.exports = (\n  require('../../module.compiled') as typeof import('../../module.compiled')\n).vendored['react-ssr']!.ReactJsxDevRuntime\n"],"names":["module","exports","require","vendored","ReactJsxDevRuntime"],"mappings":"AAAAA,OAAOC,OAAO,GACZC,QAAQ,4HACRC,QAAQ,CAAC,YAAY,CAAEC,kBAAkB","ignoreList":[0]}}]
+}

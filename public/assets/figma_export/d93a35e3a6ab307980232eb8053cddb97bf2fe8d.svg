@@ -1,0 +1,10 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 49.5907 5.232" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Background shape">
+<mask id="mask0_346_183" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="50" height="6">
+<path id="Vector" d="M49.5907 -1.54972e-06H1.4782e-05L4.68358 2.616L1.4782e-05 5.232H49.5907L44.9415 2.616L49.5907 -1.54972e-06Z" fill="var(--fill-0, white)"/>
+</mask>
+<g mask="url(#mask0_346_183)">
+<path id="Vector_2" d="M0.0129972 0.00927734H49.6071V5.24168H0.0129972V0.00927734Z" fill="var(--fill-0, #7ACEFF)"/>
+</g>
+</g>
+</svg>
