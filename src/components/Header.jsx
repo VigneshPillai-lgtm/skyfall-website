@@ -14,7 +14,7 @@ export default function Header() {
               SCHOOL OF COMPUTATIONAL AND PHYSICAL SCIENCES
             </p>
             <p className="font-league text-[10px] font-bold text-white tracking-wide leading-tight">
-              DEPARTMENT OF COMPUTER SCIENCE
+              DEPARTMENT OF COMPUTER APPLICATIONS
             </p>
           </div>
         </div>

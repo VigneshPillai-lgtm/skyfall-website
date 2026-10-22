@@ -327,19 +327,19 @@ const FOOTER_INFO: Record<string, { title: string; subtitle: string; body: strin
   Founder: {
     title: "FOUNDER & INSPIRATION",
     subtitle: "CMI Visionaries & Academic Leadership",
-    body: "Kristu Jayanti College is run by the Bodhi Niketan Trust, formed by the members of St. Joseph Province of the Carmelites of Mary Immaculate (CMI), the first indigenous religious congregation in India founded by St. Kuriakose Elias Chavara.",
+    body: "Kristu Jayanti (Deemed to be University) is run by the Bodhi Niketan Trust, formed by the members of St. Joseph Province of the Carmelites of Mary Immaculate (CMI), the first indigenous religious congregation in India founded by St. Kuriakose Elias Chavara.",
     badge: "Est. 1999 • Bengaluru",
   },
   "Our Values": {
     title: "OUR CORE VALUES",
     subtitle: "Light & Prosperity • Innovation with Integrity",
-    body: "Guided by faith, academic excellence, social responsibility, and holistic development, the Department of Computer Science empowers young creators to build technology that uplifts communities.",
+    body: "Guided by faith, academic excellence, social responsibility, and holistic development, the Department of Computer Applications empowers young creators to build technology that uplifts communities.",
     badge: "Excellence • Creativity • Community",
   },
   History: {
     title: "OUR HISTORY",
     subtitle: "Over Two Decades of Computing Excellence",
-    body: "Since 1999, the Department of Computer Science (UG) has grown into one of India's premier hubs for undergraduate computing education, hosting national hackathons, research symposiums, and student-led innovation labs.",
+    body: "Since 1999, the Department of Computer Applications (UG) at Kristu Jayanti (Deemed to be University) has grown into one of India's premier hubs for undergraduate computing education, hosting national hackathons, research symposiums, and student-led innovation labs.",
     badge: "25+ Years of Impact",
   },
   Vision: {
@@ -685,7 +685,7 @@ export default function Frame() {
         </motion.div>
 
         <div
-          className="absolute inset-[21%_28%_75.5%_28%]"
+          className="absolute inset-[21%_25%_75.5%_25%]"
           data-name="Glass Morphism"
           data-node-id="261:14"
         >
@@ -702,11 +702,11 @@ export default function Frame() {
         </p>
 
         <div
-          className="absolute inset-[21%_28%_75.5%_28%] flex items-center justify-center text-center pointer-events-none"
+          className="absolute inset-[21%_25%_75.5%_25%] flex items-center justify-center text-center pointer-events-none"
           data-node-id="261:13"
         >
-          <p className="font-['League_Spartan:Bold',sans-serif] font-bold leading-none text-[1.3vw] text-shadow-[0.0794vw_0.0794vw_0.3968vw_rgba(66,66,66,0.58)] text-white tracking-[0.2024vw] whitespace-nowrap pt-[0.2vw]">
-            DEPARTMENT OF COMPUTER SCIENCE
+          <p className="font-['League_Spartan:Bold',sans-serif] font-bold leading-none text-[1.18vw] text-shadow-[0.0794vw_0.0794vw_0.3968vw_rgba(66,66,66,0.58)] text-white tracking-[0.16vw] whitespace-nowrap pt-[0.2vw]">
+            DEPARTMENT OF COMPUTER APPLICATIONS
           </p>
         </div>
 
@@ -2330,8 +2330,8 @@ export default function Frame() {
           whileTap={{ scale: 0.99 }}
           style={{ transformOrigin: "48.9% 69.6%" }}
           onClick={() => {
-            navigator.clipboard?.writeText("nikhil@skyfall.live");
-            triggerToast("📋 Copied sponsor email: nikhil@skyfall.live");
+            navigator.clipboard?.writeText("nikhil@skyfall.live | +91 8050726182");
+            triggerToast("📋 Copied contact: Nikhil Mansotra (+91 8050726182)");
           }}
           className="absolute inset-0 pointer-events-none z-20"
           data-name="text box"
@@ -3111,7 +3111,7 @@ export default function Frame() {
               className="font-['League_Spartan:SemiBold',sans-serif] font-semibold leading-[1.35vw] text-[#18c8a4] text-[1.08vw] tracking-[0.02vw]"
               data-node-id="300:843"
             >
-              {`We're here to help! They can reach out to us at contact@skyfall.live for questions.`}
+              {`We're here to help! Parents can reach out to us at contact@skyfall.live or call +91 8050726182 for any questions.`}
             </p>
           </div>
         </motion.div>
@@ -3339,7 +3339,7 @@ export default function Frame() {
           whileHover={{ scale: 1.025 }}
           onClick={() => {
             window.open(
-              "https://www.google.com/maps/search/?api=1&query=Kristu+Jayanti+College+Bengaluru",
+              "https://www.google.com/maps/search/?api=1&query=Kristu+Jayanti+Deemed+to+be+University+Bengaluru",
               "_blank",
               "noopener,noreferrer"
             );
@@ -3358,7 +3358,7 @@ export default function Frame() {
           {/* Interactive Pulsing Venue Pin */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             <div className="bg-[#004aad]/90 text-white font-['League_Spartan:Bold',sans-serif] text-[0.85vw] px-[1vw] py-[0.4vw] rounded-full shadow-lg border border-white/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-1.5">
-              <span>📍 Kristu Jayanti College • Click to Open Maps</span>
+              <span>📍 P1 Auditorium, 5th Floor, Science Block II • Kristu Jayanti (Deemed to be University)</span>
             </div>
           </div>
         </motion.div>
@@ -3381,7 +3381,7 @@ export default function Frame() {
           style={{ transformOrigin: "90.2% 15.5%" }}
           onClick={() => {
             window.open(
-              "https://www.google.com/maps/search/?api=1&query=Kristu+Jayanti+College+Bengaluru",
+              "https://www.google.com/maps/search/?api=1&query=Kristu+Jayanti+Deemed+to+be+University+Bengaluru",
               "_blank",
               "noopener,noreferrer"
             );
@@ -3417,10 +3417,10 @@ export default function Frame() {
         </motion.div>
 
         <p
-          className="absolute font-['League_Spartan:Black',sans-serif] font-black inset-[9.52%_71.2%_75.51%_3.17%] leading-[2.0635vw] text-[2.1429vw] text-white tracking-[0.1258vw]"
+          className="absolute font-['League_Spartan:Black',sans-serif] font-black inset-[9.52%_70.5%_75.51%_3.17%] leading-[1.95vw] text-[1.85vw] text-white tracking-[0.11vw]"
           data-node-id="304:40"
         >
-          DEPARTMENT OF COMPUTER SCIENCE
+          DEPARTMENT OF COMPUTER APPLICATIONS
         </p>
 
         {/* Interactive Footer Button: Our Values */}
@@ -3538,10 +3538,10 @@ export default function Frame() {
           className="absolute bottom-[28%] font-['Lato:SemiBold',sans-serif] leading-[1.65vw] left-[3.17%] not-italic right-[51%] text-[1.16vw] text-white top-[30.95%] tracking-[0.11vw] whitespace-pre-wrap"
           data-node-id="304:57"
         >
-          {`With a legacy spanning over two decades, the Department of Computer Science (UG) has been a cornerstone of Kristu Jayanti since its inception in 1999. `}
+          {`With a legacy spanning over two decades, the Department of Computer Applications (UG) has been a cornerstone of Kristu Jayanti (Deemed to be University) since its inception in 1999. `}
           <br aria-hidden="true" />
           <br aria-hidden="true" />
-          The department is nationally and state-level recognised for excellence in its BCA programme, ranking among the top institutions in India and consistently securing leading positions among colleges in Bengaluru.
+          The department is nationally and state-level recognised for excellence in its BCA programmes, ranking among the top institutions in India and consistently securing leading positions among colleges in Bengaluru.
         </p>
       </div>
 
@@ -3583,7 +3583,7 @@ export default function Frame() {
                     CLAIM YOUR SKYFALL PASS 🐧
                   </h3>
                   <p className="text-sm text-[#96e6ff]/80 mb-5">
-                    Reserve your spot at the National Teens Hackathon at Kristu Jayanti College!
+                    Reserve your spot at the National Teens Hackathon at Kristu Jayanti (Deemed to be University)!
                   </p>
 
                   <form
@@ -3674,7 +3674,7 @@ export default function Frame() {
                   </h3>
                   <p className="text-sm text-white/80 mb-4">
                     Track: <span className="text-[#f6d02b] font-bold">{regForm.track}</span> • See you on{" "}
-                    <span className="text-[#96e6ff] font-bold">April 11th, 2026</span> at Kristu Jayanti College!
+                    <span className="text-[#96e6ff] font-bold">April 11th, 2026</span> at Kristu Jayanti (Deemed to be University) — P1 Auditorium, Science Block II!
                   </p>
                   <button
                     onClick={() => setShowRegisterModal(false)}
