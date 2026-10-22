@@ -2747,70 +2747,62 @@ export default function Frame() {
           )}
         </motion.div>
 
-        {/* Organiser's Note (Purple Crystal Tablet) */}
+        {/* Organiser's Note (Purple Crystal Tablet - Message from the Team) */}
         <motion.div
-          initial={{ opacity: 0, x: -35 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.75, type: "spring", bounce: 0.3 }}
           whileHover={{
-            y: -8,
+            y: -6,
             scale: 1.02,
-            filter: "drop-shadow(0 0 2vw rgba(200, 0, 225, 0.5))",
+            filter: "drop-shadow(0 0 2vw rgba(200, 0, 225, 0.6))",
           }}
-          style={{ transformOrigin: "37.0% 50.4%" }}
-          className="absolute inset-0 pointer-events-none z-10"
+          className="absolute inset-[41.08%_41%_40.29%_15.08%] pointer-events-auto z-20 transition-transform cursor-default"
+          data-name="Organisers Note Tablet"
         >
-          <div
-            className="absolute inset-[41.08%_41%_40.29%_15.08%] pointer-events-auto"
-            data-name="Rectangle"
-            data-node-id="300:630"
-          >
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              <img alt="" className="absolute left-0 max-w-none size-full top-0" src={imgRectangle19} />
-            </div>
+          {/* Background Image / Purple Crystal Tablet Container */}
+          <div className="absolute inset-0 overflow-hidden rounded-2xl shadow-[0_0_50px_rgba(200,0,225,0.4)] border border-[#e51cff]/40 bg-[#16052f]">
+            <img
+              alt="Purple Message from Team"
+              className="absolute left-0 max-w-none size-full top-0 object-cover"
+              src={imgRectangle19}
+            />
+            {/* Subtle purple glow shimmer overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#e51cff]/15 via-transparent to-[#28a4e6]/10 pointer-events-none" />
           </div>
-          <div
-            className="absolute contents inset-[43.43%_45.24%_42.8%_20.63%] text-white"
-            data-name="Organiser's Note Text"
-            data-node-id="300:631"
-          >
-            <p
-              className="absolute font-['League_Spartan:Bold',sans-serif] font-bold inset-[42.9%_65%_56.0%_20.63%] leading-[1.6vw] text-[1.0vw] tracking-[0.16vw] whitespace-nowrap"
-              data-node-id="300:632"
-            >
-              Hey Builders!
-            </p>
-            <p
-              className="absolute font-['League_Spartan:Medium',sans-serif] font-medium inset-[44.45%_44.8%_52.6%_20.63%] leading-[1.35vw] text-[0.9vw] tracking-[0.13vw]"
-              data-node-id="300:633"
-            >
-              We’re super excited to welcome you to Skyfall. This isn’t just another event it’s a space built for you. Your ideas, your curiosity, and your willingness to try something new are what make this experience special.
-            </p>
-            <p
-              className="absolute font-['League_Spartan:Medium',sans-serif] font-medium inset-[48.45%_44.8%_49.4%_20.63%] leading-[1.52vw] text-[0.98vw] tracking-[0.14vw]"
-              data-node-id="300:634"
-            >
-              Behind the scenes, we’ve been working to create an environment where you can explore, learn, and build freely.
-            </p>
-            <p
-              className="absolute font-['League_Spartan:Medium',sans-serif] font-medium inset-[51.15%_44.8%_46.7%_20.63%] leading-[1.52vw] text-[0.98vw] tracking-[0.14vw]"
-              data-node-id="300:635"
-            >
-              Whether this is your first time building or you’ve already started experimenting, Skyfall is your space to take risks, collaborate, and create without fear.
-            </p>
-            <p
-              className="absolute font-['League_Spartan:Medium',sans-serif] font-medium inset-[54.35%_44.8%_44.2%_20.63%] leading-[1.52vw] text-[0.9524vw] tracking-[0.14vw]"
-              data-node-id="300:636"
-            >
-              We can’t wait to see what you build. Let’s make this an experience to remember.
-            </p>
-            <p
-              className="absolute font-['League_Spartan:Medium',sans-serif] font-medium inset-[56.52%_65%_42.8%_20.63%] leading-[1.5873vw] text-[0.9524vw] tracking-[0.2381vw] whitespace-nowrap"
-              data-node-id="300:637"
-            >
-              — Team Skyfall
-            </p>
+
+          {/* Note Content */}
+          <div className="relative size-full py-[3.6vw] px-[4.2vw] flex flex-col justify-between text-white z-10">
+            <div>
+              <div className="flex items-center gap-[0.6vw] mb-[0.8vw]">
+                <span className="text-[1.2vw]">💌</span>
+                <p className="font-['League_Spartan:Bold',sans-serif] font-bold text-[1.2vw] text-[#ffcdf6] tracking-[0.16vw] uppercase text-shadow-[0_0_12px_rgba(229,28,255,0.5)]">
+                  Hey Builders!
+                </p>
+              </div>
+
+              <p className="font-['League_Spartan:Medium',sans-serif] font-medium leading-[1.4vw] text-[0.92vw] text-white/95 tracking-[0.03vw] mb-[0.6vw]">
+                We’re super excited to welcome you to Skyfall. This isn’t just another event it’s a space built for you. Your ideas, your curiosity, and your willingness to try something new are what make this experience special.
+              </p>
+
+              <p className="font-['League_Spartan:Medium',sans-serif] font-medium leading-[1.4vw] text-[0.92vw] text-white/95 tracking-[0.03vw] mb-[0.6vw]">
+                Behind the scenes, we’ve been working to create an environment where you can explore, learn, and build freely.
+              </p>
+
+              <p className="font-['League_Spartan:Medium',sans-serif] font-medium leading-[1.4vw] text-[0.92vw] text-white/90 tracking-[0.03vw] mb-[0.6vw]">
+                Whether this is your first time building or you’ve already started experimenting, Skyfall is your space to take risks, collaborate, and create without fear.
+              </p>
+
+              <p className="font-['League_Spartan:Medium',sans-serif] font-medium leading-[1.4vw] text-[0.92vw] text-white/90 tracking-[0.03vw]">
+                We can’t wait to see what you build. Let’s make this an experience to remember.
+              </p>
+            </div>
+
+            <div className="flex items-center justify-between pt-[0.4vw] border-t border-white/20">
+              <span className="font-['League_Spartan:Bold',sans-serif] font-bold text-[1.0vw] text-[#96e6ff] tracking-[0.2vw]">
+                — Team Skyfall
+              </span>
+              <span className="text-[0.72vw] bg-white/10 px-[0.6vw] py-[0.2vw] rounded-full text-white/80 font-['League_Spartan:SemiBold',sans-serif]">
+                Department of Computer Applications
+              </span>
+            </div>
           </div>
         </motion.div>
 
