@@ -2272,7 +2272,7 @@ export default function Frame() {
             y: -6,
             filter: "drop-shadow(0 0 1.2vw rgba(150, 230, 255, 0.6))",
           }}
-          onClick={() => triggerToast("✨ Sponsor Showcase — Interested in partnering? Email nikhil@skyfall.live!")}
+          onClick={() => triggerToast("✨ Sponsor Showcase — Interested in partnering? Contact Nikhil: nikhil@skyfall.live!")}
           className="absolute inset-[54.64%_18.68%_38.03%_62.69%] cursor-pointer z-10"
           data-name="Rectangle"
           data-node-id="294:527"
@@ -2293,7 +2293,7 @@ export default function Frame() {
             y: -6,
             filter: "drop-shadow(0 0 1.2vw rgba(150, 230, 255, 0.6))",
           }}
-          onClick={() => triggerToast("✨ Sponsor Showcase — Interested in partnering? Email nikhil@skyfall.live!")}
+          onClick={() => triggerToast("✨ Sponsor Showcase — Interested in partnering? Contact Nikhil: nikhil@skyfall.live!")}
           className="absolute inset-[54.64%_40.9%_38.03%_40.47%] cursor-pointer z-10"
           data-name="Rectangle"
           data-node-id="294:525"
@@ -2314,7 +2314,7 @@ export default function Frame() {
             y: -6,
             filter: "drop-shadow(0 0 1.2vw rgba(150, 230, 255, 0.6))",
           }}
-          onClick={() => triggerToast("✨ Sponsor Showcase — Interested in partnering? Email nikhil@skyfall.live!")}
+          onClick={() => triggerToast("✨ Sponsor Showcase — Interested in partnering? Contact Nikhil: nikhil@skyfall.live!")}
           className="absolute inset-[54.64%_63.12%_38.03%_18.25%] cursor-pointer z-10"
           data-name="Rectangle"
           data-node-id="294:523"
@@ -2352,7 +2352,7 @@ export default function Frame() {
             <p className="font-['Inter:Regular',sans-serif] font-normal leading-[1.48vw] not-italic text-[#3585b3] text-[1.02vw] tracking-[0.11vw]">
               <span>{`We’re grateful to our sponsors for supporting our vision and empowering young innovators. Their contribution makes Skyfall possible. Interested in becoming a sponsor? contact `}</span>
               <span className="text-[#156898] font-semibold underline decoration-dotted">
-                nikhil@skyfall.live
+                Nikhil Mansotra (+91 8050726182 • nikhil@skyfall.live)
               </span>
             </p>
           </div>
@@ -3111,7 +3111,7 @@ export default function Frame() {
               className="font-['League_Spartan:SemiBold',sans-serif] font-semibold leading-[1.35vw] text-[#18c8a4] text-[1.08vw] tracking-[0.02vw]"
               data-node-id="300:843"
             >
-              {`We're here to help! Parents can reach out to us at contact@skyfall.live or call +91 8050726182 for any questions.`}
+              {`We're here to help! Parents can reach out to Nikhil Mansotra (+91 8050726182) or email contact@skyfall.live for any questions.`}
             </p>
           </div>
         </motion.div>
@@ -3337,29 +3337,55 @@ export default function Frame() {
         </div>
         <motion.div
           whileHover={{ scale: 1.025 }}
+          whileTap={{ scale: 0.98 }}
           onClick={() => {
             window.open(
-              "https://www.google.com/maps/search/?api=1&query=Kristu+Jayanti+Deemed+to+be+University+Bengaluru",
+              "https://www.google.com/maps/place/Kristu+Jayanti+College/@13.0583195,77.6433502,17z",
               "_blank",
               "noopener,noreferrer"
             );
           }}
-          className="absolute inset-[30.95%_4.76%_14.29%_57.94%] cursor-pointer group overflow-hidden"
+          className="absolute inset-[30.95%_4.76%_14.29%_57.94%] cursor-pointer group overflow-hidden rounded-[0.4vw] shadow-[0_0_2vw_rgba(0,74,173,0.35)]"
           data-name="Map img"
           data-node-id="304:29"
         >
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <img
-              alt="Venue Map"
-              className="absolute left-0 max-w-none size-full top-0 group-hover:scale-105 transition-transform duration-500"
-              src={imgMapImg}
+          {/* Embedded Google Maps of Kristu Jayanti Central Campus */}
+          <div className="absolute inset-0 bg-[#e5e3df] overflow-hidden pointer-events-none">
+            <iframe
+              src="https://maps.google.com/maps?q=Kristu+Jayanti+College+Bengaluru&t=&z=16&ie=UTF8&iwloc=&output=embed"
+              title="Kristu Jayanti Central Campus Map"
+              className="absolute inset-0 w-full h-full border-0 pointer-events-none scale-[1.08] filter saturate-[1.2]"
+              loading="lazy"
             />
           </div>
-          {/* Interactive Pulsing Venue Pin */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="bg-[#004aad]/90 text-white font-['League_Spartan:Bold',sans-serif] text-[0.85vw] px-[1vw] py-[0.4vw] rounded-full shadow-lg border border-white/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-1.5">
-              <span>📍 P1 Auditorium, 5th Floor, Science Block II • Kristu Jayanti (Deemed to be University)</span>
+
+          {/* Google Maps Campus Badge */}
+          <div className="absolute top-[0.6vw] left-[0.6vw] bg-white/95 backdrop-blur-md rounded-[0.4vw] px-[0.7vw] py-[0.5vw] shadow-lg border border-black/10 pointer-events-none z-10 transition-transform group-hover:scale-105">
+            <div className="flex items-center gap-[0.4vw]">
+              <span className="text-[1.1vw]">📍</span>
+              <div>
+                <p className="font-['League_Spartan:Bold',sans-serif] font-bold text-[#1a1a1a] text-[0.85vw] leading-tight">
+                  Kristu Jayanti Central Campus
+                </p>
+                <p className="font-['Inter:Regular',sans-serif] text-[0.62vw] text-[#555] leading-tight">
+                  Science Block II (P1 Auditorium) • Bengaluru
+                </p>
+              </div>
             </div>
+          </div>
+
+          {/* Animated Center Pin Marker */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+            <div className="relative flex items-center justify-center">
+              <span className="animate-ping absolute inline-flex h-[1.8vw] w-[1.8vw] rounded-full bg-red-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-[0.9vw] w-[0.9vw] bg-red-600 border-2 border-white shadow-md"></span>
+            </div>
+          </div>
+
+          {/* Bottom Open in Maps Pill */}
+          <div className="absolute bottom-[0.6vw] right-[0.6vw] bg-[#1a73e8] text-white font-['League_Spartan:Bold',sans-serif] text-[0.75vw] px-[0.8vw] py-[0.35vw] rounded-full shadow-lg border border-white/40 pointer-events-none flex items-center gap-[0.3vw] z-10 group-hover:bg-[#1557b0] transition-colors">
+            <span>🗺️ Open in Google Maps</span>
+            <span className="text-[0.85vw]">↗</span>
           </div>
         </motion.div>
 
@@ -3381,7 +3407,7 @@ export default function Frame() {
           style={{ transformOrigin: "90.2% 15.5%" }}
           onClick={() => {
             window.open(
-              "https://www.google.com/maps/search/?api=1&query=Kristu+Jayanti+Deemed+to+be+University+Bengaluru",
+              "https://www.google.com/maps/dir/?api=1&destination=Kristu+Jayanti+College+Autonomous+Bengaluru",
               "_blank",
               "noopener,noreferrer"
             );
