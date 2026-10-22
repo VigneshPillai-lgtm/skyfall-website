@@ -2843,7 +2843,7 @@ export default function Frame() {
         </motion.div>
 
         {/* Waterfall Penguin #6 */}
-        <div className="absolute flex inset-[56.0%_19.5%_40.61%_72.5%] items-center justify-center z-20">
+        <div className="absolute flex inset-[53.0%_20.5%_43.61%_71.5%] items-center justify-center z-20">
           <div className="-scale-y-100 flex-none rotate-180 size-[7.9857vw]">
             <motion.div
               whileHover={{ scale: 1.16, rotate: -8 }}
