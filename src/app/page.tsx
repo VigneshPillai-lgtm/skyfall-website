@@ -3496,18 +3496,6 @@ export default function Frame() {
           </p>
         </motion.button>
 
-        {/* Sole Contact Badge: Nikhil Mansotra */}
-        <div className="absolute bottom-[6.5%] left-[3.17%] z-30 flex items-center gap-[0.8vw] bg-[#051a30]/90 backdrop-blur-md border border-[#28a4e6]/40 rounded-full px-[1.2vw] py-[0.5vw] shadow-lg">
-          <span className="text-[1.1vw]">👤</span>
-          <div>
-            <p className="font-['League_Spartan:Bold',sans-serif] font-bold text-white text-[0.82vw] leading-tight">
-              Contact: Nikhil Mansotra
-            </p>
-            <p className="font-['Inter:Regular',sans-serif] text-[0.68vw] text-[#96e6ff] leading-tight">
-              +91 8050726182 • nikhil@skyfall.live
-            </p>
-          </div>
-        </div>
 
         <p
           className="absolute bottom-[28%] font-['Lato:SemiBold',sans-serif] leading-[1.65vw] left-[3.17%] not-italic right-[51%] text-[1.16vw] text-white top-[30.95%] tracking-[0.11vw] whitespace-pre-wrap"

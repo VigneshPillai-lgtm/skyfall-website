@@ -699,34 +699,6 @@ export default function MobileView({
             </a>
           </div>
 
-          {/* Sole Contact Card */}
-          <div className="bg-[#051a30] border border-[#28a4e6]/40 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-            <div>
-              <span className="text-[10px] font-bold text-[#00cf91] uppercase tracking-widest block mb-0.5">
-                HEAD ORGANISER & CONTACT
-              </span>
-              <p className="font-['League_Spartan:Bold',sans-serif] font-bold text-sm text-white">
-                Nikhil Mansotra
-              </p>
-              <p className="text-xs text-white/70">
-                Department of Computer Applications
-              </p>
-            </div>
-            <div className="flex gap-2 text-xs">
-              <a
-                href="tel:+918050726182"
-                className="bg-white/10 hover:bg-white/20 border border-white/20 px-3 py-1.5 rounded-lg text-white font-semibold"
-              >
-                📞 +91 8050726182
-              </a>
-              <a
-                href="mailto:nikhil@skyfall.live"
-                className="bg-[#00bd96]/20 border border-[#00bd96]/40 px-3 py-1.5 rounded-lg text-[#00cf91] font-semibold"
-              >
-                ✉️ Email
-              </a>
-            </div>
-          </div>
 
           {/* Copyright */}
           <div className="pt-4 border-t border-white/10 text-center text-[10px] text-white/50">
