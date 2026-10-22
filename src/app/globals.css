@@ -235,3 +235,11 @@ body {
   background: linear-gradient(180deg, #73c9ff, #00bd96, #c800e1);
   border-radius: 4px;
 }
+
+/* Fallback for older iOS Safari / WebKit that can't parse `in oklab` gradient
+   interpolation (Tailwind v4 default) — otherwise those backgrounds render transparent (black). */
+@supports not (background-image: linear-gradient(in oklab, red, blue)) {
+  .bg-gradient-to-b { --tw-gradient-position: to bottom !important; }
+  .bg-gradient-to-r { --tw-gradient-position: to right !important; }
+  .bg-gradient-to-br { --tw-gradient-position: to bottom right !important; }
+}

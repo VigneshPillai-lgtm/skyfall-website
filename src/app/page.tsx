@@ -856,7 +856,7 @@ export default function Frame() {
       {/* PAGE 2: CLOUD KINGDOM (BUILD COOL PROJECTS, WIN COOL REWARDS)         */}
       {/* ===================================================================== */}
       <div
-        className="absolute bg-gradient-to-b from-[#73c9ff] from-[50.481%] h-[89.6825vw] left-0 overflow-clip to-[#74cde8] top-[73.0159vw] w-[100vw]"
+        className="absolute bg-[#73c9ff] bg-gradient-to-b from-[#73c9ff] from-[50.481%] h-[89.6825vw] left-0 overflow-clip to-[#74cde8] top-[73.0159vw] w-[100vw]"
         data-name="Page 2"
         data-node-id="266:41"
       >
@@ -943,7 +943,7 @@ export default function Frame() {
                 "Complete side quests around campus to win that Shark Plushie! 🦈✨"
               )
             }
-            className="absolute inset-[12.4%_53.8%_75.2%_35.09%] cursor-pointer pointer-events-auto z-20 animate-htn-penguin"
+            className="absolute inset-[12.4%_53.8%_75.2%_35.09%] max-md:top-[15.2%] max-md:bottom-[72.4%] md:max-lg:top-[13.88%] md:max-lg:bottom-[73.72%] cursor-pointer pointer-events-auto z-20 animate-htn-penguin"
             data-name="Rectangle"
             data-node-id="275:73"
           >
@@ -1336,7 +1336,7 @@ export default function Frame() {
         </div>
 
         {/* 3 BUILD CARDS GROUP (Zoomed on Phone & Tablet) */}
-        <div className="absolute inset-0 pointer-events-none z-20 max-md:scale-[1.18] md:max-lg:scale-[1.1] origin-[50.1%_46.9%]">
+        <div className="absolute inset-0 pointer-events-none z-20 max-md:scale-[1.15] md:max-lg:scale-[1.08] origin-[50.1%_62.5%]">
         {/* BUILD CARD 1: SOFTWARE */}
         <motion.div
           initial={{ opacity: 0, y: 35 }}
@@ -1616,7 +1616,7 @@ export default function Frame() {
         {/* =================================================================== */}
         {/* INTERACTIVE IDEA GENERATOR BOX (Exact Figma coordinates + live UI)  */}
         {/* =================================================================== */}
-        <div className="absolute inset-0 pointer-events-none z-30 max-md:scale-[1.18] md:max-lg:scale-[1.1] origin-[50%_77.2%]">
+        <div className="absolute inset-0 pointer-events-none z-30 max-md:scale-[1.12] md:max-lg:scale-[1.06] origin-[50%_64%]">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
