@@ -1,0 +1,13 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 11.28 3.216" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="btn background">
+<mask id="mask0_346_75" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="12" height="4">
+<path id="Vector" fill-rule="evenodd" clip-rule="evenodd" d="M6.55651e-07 0H11.28V3.216H6.55651e-07V0Z" fill="var(--fill-0, white)"/>
+</mask>
+<g mask="url(#mask0_346_75)">
+<g id="Group">
+<path id="Vector_2" d="M-0.00531848 0.00336713H11.2847V3.22549H-0.00531848V0.00336713Z" fill="var(--fill-0, #A2FFEC)"/>
+<path id="Vector_3" d="M-0.005346 0.00336711H11.2895V3.22544H-0.005346V0.00336711Z" stroke="var(--stroke-0, #00CF91)" stroke-width="0.391196"/>
+</g>
+</g>
+</g>
+</svg>

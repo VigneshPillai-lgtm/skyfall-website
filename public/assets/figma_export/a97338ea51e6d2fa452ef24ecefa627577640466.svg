@@ -1,0 +1,19 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 15.3493 14.419" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="yellow background">
+<g id="Clip path group">
+<mask id="mask0_346_101" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="15">
+<path id="Vector" fill-rule="evenodd" clip-rule="evenodd" d="M0.198057 0.197305H15.1599V14.2203H0.198057V0.197305Z" fill="var(--fill-0, white)"/>
+</mask>
+<g mask="url(#mask0_346_101)">
+<path id="Vector_2" d="M0.195354 0.195836H15.1535V14.2238H0.195354V0.195836Z" fill="url(#paint0_radial_346_101)"/>
+</g>
+</g>
+<path id="Vector_3" d="M0.195598 0.195598H15.1537V14.2234H0.195598V0.195598Z" stroke="var(--stroke-0, #F6D02B)" stroke-width="0.391196"/>
+</g>
+<defs>
+<radialGradient id="paint0_radial_346_101" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1.42319 1.37639) scale(1.72274 1.63244)">
+<stop stop-color="#EDEEFF"/>
+<stop offset="1" stop-color="#DCF34E"/>
+</radialGradient>
+</defs>
+</svg>
