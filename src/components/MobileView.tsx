@@ -659,27 +659,44 @@ export default function MobileView({
               </div>
 
               <a
-                href="https://maps.app.goo.gl/tWpSg5X7qG4W2V2T7"
+                href="https://www.google.com/maps/dir/?api=1&destination=Kristu+Jayanti+College+Autonomous+Bengaluru"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#28a4e6] text-[#001f3f] font-bold text-xs py-2 px-3.5 rounded-xl shadow-md whitespace-nowrap"
+                className="bg-[#28a4e6] hover:bg-[#1f87c2] active:scale-95 text-[#001f3f] font-bold text-xs py-2 px-3.5 rounded-xl shadow-md whitespace-nowrap transition-all"
               >
-                Directions
+                Directions ↗
               </a>
             </div>
 
-            <div className="w-full h-64 rounded-2xl overflow-hidden border-2 border-[#28a4e6]/40 shadow-lg">
+            {/* Tap to Open in Google Maps */}
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Kristu+Jayanti+College+Autonomous+Bengaluru"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative block w-full h-64 rounded-2xl overflow-hidden border-2 border-[#28a4e6]/40 shadow-lg group cursor-pointer"
+            >
               <iframe
                 title="Kristu Jayanti Central Campus Map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.586111075677!2d77.6534570757367!3d13.061958612906803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1a221f7e025f%3A0xc6cb51b22e118968!2sKristu%20Jayanti%20College%20(Autonomous)%2C%20Bengaluru!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=77.638,13.053,77.649,13.064&layer=mapnik&marker=13.0583,77.6433"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
-                allowFullScreen={false}
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+                className="pointer-events-none"
               />
-            </div>
+
+              {/* Tap to Open in Google Maps overlay badge */}
+              <div className="absolute bottom-3 right-3 bg-[#1a73e8] text-white font-['League_Spartan:Bold',sans-serif] text-xs px-3 py-1.5 rounded-full shadow-lg border border-white/30 flex items-center gap-1.5 group-hover:bg-[#1557b0] transition-colors pointer-events-none">
+                <span>🗺️ Open in Google Maps</span>
+                <span className="text-sm">↗</span>
+              </div>
+
+              {/* Campus label badge */}
+              <div className="absolute top-3 left-3 bg-white/95 text-[#1a1a1a] text-xs font-bold px-3 py-1 rounded-lg shadow-md border border-black/10 flex items-center gap-1.5 pointer-events-none">
+                <span>📍</span>
+                <span>Kristu Jayanti Central Campus</span>
+              </div>
+            </a>
           </div>
 
           {/* Sole Contact Card */}

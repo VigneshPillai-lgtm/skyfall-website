@@ -3306,24 +3306,20 @@ export default function Frame() {
         >
           <img alt="" className="absolute block max-w-none size-full" src={imgMapBorderDotted} />
         </div>
-        <motion.div
+        <motion.a
+          href="https://www.google.com/maps/search/?api=1&query=Kristu+Jayanti+College+Autonomous+Bengaluru"
+          target="_blank"
+          rel="noopener noreferrer"
           whileHover={{ scale: 1.025 }}
           whileTap={{ scale: 0.98 }}
-          onClick={() => {
-            window.open(
-              "https://www.google.com/maps/place/Kristu+Jayanti+College/@13.0583195,77.6433502,17z",
-              "_blank",
-              "noopener,noreferrer"
-            );
-          }}
-          className="absolute inset-[30.95%_4.76%_14.29%_57.94%] cursor-pointer group overflow-hidden rounded-[0.4vw] shadow-[0_0_2vw_rgba(0,74,173,0.35)]"
+          className="absolute inset-[30.95%_4.76%_14.29%_57.94%] cursor-pointer group overflow-hidden rounded-[0.4vw] shadow-[0_0_2vw_rgba(0,74,173,0.35)] z-25 block pointer-events-auto"
           data-name="Map img"
           data-node-id="304:29"
         >
-          {/* Embedded Google Maps of Kristu Jayanti Central Campus */}
+          {/* Embedded Map of Kristu Jayanti Central Campus */}
           <div className="absolute inset-0 bg-[#e5e3df] overflow-hidden pointer-events-none">
             <iframe
-              src="https://maps.google.com/maps?q=Kristu+Jayanti+College+Bengaluru&t=&z=16&ie=UTF8&iwloc=&output=embed"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=77.638,13.053,77.649,13.064&layer=mapnik&marker=13.0583,77.6433"
               title="Kristu Jayanti Central Campus Map"
               className="absolute inset-0 w-full h-full border-0 pointer-events-none scale-[1.08] filter saturate-[1.2]"
               loading="lazy"
@@ -3339,7 +3335,7 @@ export default function Frame() {
                   Kristu Jayanti Central Campus
                 </p>
                 <p className="font-['Inter:Regular',sans-serif] text-[0.62vw] text-[#555] leading-tight">
-                  Science Block II (P1 Auditorium) • Bengaluru
+                  K. Narayanapura, Kothanur Post • Bengaluru
                 </p>
               </div>
             </div>
@@ -3358,7 +3354,7 @@ export default function Frame() {
             <span>🗺️ Open in Google Maps</span>
             <span className="text-[0.85vw]">↗</span>
           </div>
-        </motion.div>
+        </motion.a>
 
         <p
           className="absolute font-['League_Spartan:Bold',sans-serif] font-bold inset-[9.52%_22.6%_78.51%_56.35%] leading-[3.1746vw] text-[2.5397vw] text-white tracking-[0.0794vw] flex items-center"
@@ -3368,50 +3364,43 @@ export default function Frame() {
         </p>
 
         {/* Interactive GET DIRECTIONS Button */}
-        <motion.div
+        <motion.a
+          href="https://www.google.com/maps/dir/?api=1&destination=Kristu+Jayanti+College+Autonomous+Bengaluru"
+          target="_blank"
+          rel="noopener noreferrer"
           whileHover={{
             scale: 1.06,
             y: -3,
             filter: "drop-shadow(0 0 1vw rgba(150, 230, 255, 0.8))",
           }}
           whileTap={{ scale: 0.95 }}
-          style={{ transformOrigin: "90.2% 15.5%" }}
-          onClick={() => {
-            window.open(
-              "https://www.google.com/maps/dir/?api=1&destination=Kristu+Jayanti+College+Autonomous+Bengaluru",
-              "_blank",
-              "noopener,noreferrer"
-            );
-          }}
-          className="absolute inset-0 pointer-events-none z-20"
+          className="absolute inset-[9.52%_2.94%_78.48%_83.33%] pointer-events-auto z-30 cursor-pointer block group"
           data-name="Direction btn"
           data-node-id="304:63"
         >
           <div
-            className="absolute inset-[9.52%_2.94%_78.48%_83.33%] pointer-events-auto cursor-pointer"
+            className="absolute inset-0 pointer-events-none"
             data-name="Clip path group"
             data-node-id="304:33"
           >
             <img alt="" className="absolute block max-w-none size-full" src={imgClipPathGroup19} />
           </div>
           <div
-            className="absolute inset-[11.58%_3.58%_88.42%_84.06%]"
+            className="absolute inset-[20.6%_6.4%_20.6%_7.2%] pointer-events-none"
             data-name="Vector"
             data-node-id="304:38"
           >
-            <div className="absolute inset-[-0.1746vw_-1.43%]">
-              <img alt="" className="block max-w-none size-full" src={imgVector13} />
-            </div>
+            <img alt="" className="block max-w-none size-full" src={imgVector13} />
           </div>
           <div
-            className="absolute inset-[9.52%_2.94%_78.48%_83.33%] flex items-center justify-center text-center pointer-events-none"
+            className="absolute inset-0 flex items-center justify-center text-center pointer-events-none"
             data-node-id="304:39"
           >
-            <p className="font-['Fredoka_One:Regular',sans-serif] leading-none not-italic text-[#004aad] text-[0.9524vw] tracking-[0.119vw] whitespace-nowrap pt-[0.1vw]">
+            <p className="font-['Fredoka_One:Regular',sans-serif] leading-none not-italic text-[#004aad] text-[0.9524vw] tracking-[0.119vw] whitespace-nowrap pt-[0.1vw] group-hover:scale-105 transition-transform">
               GET DIRECTIONS
             </p>
           </div>
-        </motion.div>
+        </motion.a>
 
         <p
           className="absolute font-['League_Spartan:Black',sans-serif] font-black inset-[9.52%_70.5%_75.51%_3.17%] leading-[1.95vw] text-[1.85vw] text-white tracking-[0.11vw]"
@@ -3421,115 +3410,104 @@ export default function Frame() {
         </p>
 
         {/* Interactive Footer Button: Our Values */}
-        <motion.div
+        <motion.button
           whileHover={{ scale: 1.07, y: -3 }}
           whileTap={{ scale: 0.95 }}
-          style={{ transformOrigin: "20.4% 85.5%" }}
           onClick={() => setActiveFooterModal("Our Values")}
-          className="absolute inset-0 pointer-events-none z-20"
+          className="absolute inset-[80.95%_74.6%_9.52%_15.08%] z-30 pointer-events-auto cursor-pointer flex items-center justify-center group"
           data-name="btn footer"
           data-node-id="304:45"
         >
           <div
-            className="absolute inset-[80.95%_74.6%_9.52%_15.08%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0vw_0vw] mask-size-[10.5635vw_2.8968vw] pointer-events-auto cursor-pointer"
+            className="absolute inset-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0vw_0vw] mask-size-[10.5635vw_2.8968vw] pointer-events-none"
             data-name="Vector"
             data-node-id="304:47"
             style={{ maskImage: `url('${imgVector14}')` }}
           >
             <img alt="" className="absolute block max-w-none size-full" src={imgVector15} />
           </div>
-          <div
-            className="absolute inset-[80.95%_74.6%_9.52%_15.08%] flex items-center justify-center text-center pointer-events-none"
-            data-node-id="304:48"
-          >
-            <p className="font-['Inter:Regular',sans-serif] font-normal leading-none not-italic text-[0.9524vw] text-white tracking-[0.18vw] whitespace-nowrap">
-              Our Values
-            </p>
-          </div>
-        </motion.div>
+          <p className="relative z-10 font-['Inter:Regular',sans-serif] font-normal leading-none not-italic text-[0.9524vw] text-white tracking-[0.18vw] whitespace-nowrap pointer-events-none group-hover:text-[#96e6ff] transition-colors">
+            Our Values
+          </p>
+        </motion.button>
 
         {/* Interactive Footer Button: Founder */}
-        <motion.div
+        <motion.button
           whileHover={{ scale: 1.07, y: -3 }}
           whileTap={{ scale: 0.95 }}
-          style={{ transformOrigin: "8.5% 85.5%" }}
           onClick={() => setActiveFooterModal("Founder")}
-          className="absolute inset-0 pointer-events-none z-20"
+          className="absolute inset-[80.98%_86.25%_10.04%_3.19%] z-30 pointer-events-auto cursor-pointer flex items-center justify-center group"
           data-name="btn footer"
           data-node-id="304:41"
         >
           <div
-            className="absolute inset-[80.98%_86.25%_10.04%_3.19%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-0.0111vw_-0.0079vw] mask-size-[10.5635vw_2.9929vw] pointer-events-auto cursor-pointer"
+            className="absolute inset-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-0.0111vw_-0.0079vw] mask-size-[10.5635vw_2.9929vw] pointer-events-none"
             data-name="Vector"
             data-node-id="304:43"
             style={{ maskImage: `url('${imgVector16}')` }}
           >
             <img alt="" className="absolute block max-w-none size-full" src={imgVector17} />
           </div>
-          <div
-            className="absolute inset-[80.98%_86.25%_10.04%_3.19%] flex items-center justify-center text-center pointer-events-none"
-            data-node-id="304:44"
-          >
-            <p className="font-['Inter:Regular',sans-serif] font-normal leading-none not-italic text-[0.9524vw] text-white tracking-[0.18vw] whitespace-nowrap">
-              Founder
-            </p>
-          </div>
-        </motion.div>
+          <p className="relative z-10 font-['Inter:Regular',sans-serif] font-normal leading-none not-italic text-[0.9524vw] text-white tracking-[0.18vw] whitespace-nowrap pointer-events-none group-hover:text-[#96e6ff] transition-colors">
+            Founder
+          </p>
+        </motion.button>
 
         {/* Interactive Footer Button: History */}
-        <motion.div
+        <motion.button
           whileHover={{ scale: 1.07, y: -3 }}
           whileTap={{ scale: 0.95 }}
-          style={{ transformOrigin: "32.1% 85.5%" }}
           onClick={() => setActiveFooterModal("History")}
-          className="absolute inset-0 pointer-events-none z-20"
+          className="absolute inset-[80.54%_62.05%_10.77%_27.64%] z-30 pointer-events-auto cursor-pointer flex items-center justify-center group"
           data-name="btn footer"
           data-node-id="304:66"
         >
           <div
-            className="absolute inset-[80.54%_62.05%_10.77%_27.64%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-0.6524vw_0.1381vw] mask-size-[10.3175vw_2.8968vw] pointer-events-auto cursor-pointer"
+            className="absolute inset-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-0.6524vw_0.1381vw] mask-size-[10.3175vw_2.8968vw] pointer-events-none"
             data-name="Vector"
             data-node-id="304:51"
             style={{ maskImage: `url('${imgVector18}')` }}
           >
             <img alt="" className="absolute block max-w-none size-full" src={imgVector19} />
           </div>
-          <div
-            className="absolute inset-[80.54%_62.05%_10.77%_27.64%] flex items-center justify-center text-center pointer-events-none"
-            data-node-id="304:52"
-          >
-            <p className="font-['Inter:Regular',sans-serif] font-normal leading-none not-italic text-[0.9524vw] text-white tracking-[0.18vw] whitespace-nowrap">
-              History
-            </p>
-          </div>
-        </motion.div>
+          <p className="relative z-10 font-['Inter:Regular',sans-serif] font-normal leading-none not-italic text-[0.9524vw] text-white tracking-[0.18vw] whitespace-nowrap pointer-events-none group-hover:text-[#96e6ff] transition-colors">
+            History
+          </p>
+        </motion.button>
 
         {/* Interactive Footer Button: Vision */}
-        <motion.div
+        <motion.button
           whileHover={{ scale: 1.07, y: -3 }}
           whileTap={{ scale: 0.95 }}
-          style={{ transformOrigin: "44.2% 85.5%" }}
           onClick={() => setActiveFooterModal("Vision")}
-          className="absolute inset-0 pointer-events-none z-20"
+          className="absolute inset-[80.95%_50.57%_10.36%_38.89%] z-30 pointer-events-auto cursor-pointer flex items-center justify-center group"
           data-name="Btn footer"
           data-node-id="304:65"
         >
           <div
-            className="absolute inset-[80.95%_50.57%_10.36%_38.89%] pointer-events-auto cursor-pointer"
+            className="absolute inset-0 pointer-events-none"
             data-name="Clip path group"
             data-node-id="304:53"
           >
             <img alt="" className="absolute block max-w-none size-full" src={imgClipPathGroup20} />
           </div>
-          <div
-            className="absolute inset-[80.95%_50.57%_10.36%_38.89%] flex items-center justify-center text-center pointer-events-none"
-            data-node-id="304:56"
-          >
-            <p className="font-['Inter:Regular',sans-serif] font-normal leading-none not-italic text-[0.9524vw] text-white tracking-[0.18vw] whitespace-nowrap">
-              Vision
+          <p className="relative z-10 font-['Inter:Regular',sans-serif] font-normal leading-none not-italic text-[0.9524vw] text-white tracking-[0.18vw] whitespace-nowrap pointer-events-none group-hover:text-[#96e6ff] transition-colors">
+            Vision
+          </p>
+        </motion.button>
+
+        {/* Sole Contact Badge: Nikhil Mansotra */}
+        <div className="absolute bottom-[6.5%] left-[3.17%] z-30 flex items-center gap-[0.8vw] bg-[#051a30]/90 backdrop-blur-md border border-[#28a4e6]/40 rounded-full px-[1.2vw] py-[0.5vw] shadow-lg">
+          <span className="text-[1.1vw]">👤</span>
+          <div>
+            <p className="font-['League_Spartan:Bold',sans-serif] font-bold text-white text-[0.82vw] leading-tight">
+              Contact: Nikhil Mansotra
+            </p>
+            <p className="font-['Inter:Regular',sans-serif] text-[0.68vw] text-[#96e6ff] leading-tight">
+              +91 8050726182 • nikhil@skyfall.live
             </p>
           </div>
-        </motion.div>
+        </div>
 
         <p
           className="absolute bottom-[28%] font-['Lato:SemiBold',sans-serif] leading-[1.65vw] left-[3.17%] not-italic right-[51%] text-[1.16vw] text-white top-[30.95%] tracking-[0.11vw] whitespace-pre-wrap"
