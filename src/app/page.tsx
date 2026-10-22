@@ -8,6 +8,7 @@ import {
   useTransform,
   useSpring,
 } from "framer-motion";
+import MobileView from "@/components/MobileView";
 
 const imgBackgroundImage = "/assets/figma_export/8c0cf4cd179d56f6894f2e160144c73f86ac98f1.png";
 const imgTopFade = "/assets/figma_export/f979ec24a3438e8f882c1a1ae6d19c847ddd4d7b.png";
@@ -350,17 +351,6 @@ const FOOTER_INFO: Record<string, { title: string; subtitle: string; body: strin
   },
 };
 
-const REALMS = [
-  { id: "realm-sky", name: "Sky Realm", altitude: "+1,200m", topVw: 0, color: "#73c9ff", icon: "☀️" },
-  { id: "realm-clouds", name: "Cloud Kingdom", altitude: "+600m", topVw: 73, color: "#d876e4", icon: "☁️" },
-  { id: "realm-ocean", name: "Ocean Horizon", altitude: "0m", topVw: 146, color: "#28a4e6", icon: "⛵" },
-  { id: "realm-reef", name: "Idea Reef", altitude: "-300m", topVw: 215, color: "#00cf91", icon: "💡" },
-  { id: "realm-deep", name: "Mentor Trench", altitude: "-750m", topVw: 267, color: "#0073de", icon: "🛟" },
-  { id: "realm-cavern", name: "Waterfall Cavern", altitude: "-1,200m", topVw: 390, color: "#00bd96", icon: "🌊" },
-  { id: "realm-abyss", name: "Crystal Abyss", altitude: "-1,650m", topVw: 514, color: "#e51cff", icon: "💎" },
-  { id: "realm-base", name: "Base Camp", altitude: "-1,800m", topVw: 609, color: "#f6d02b", icon: "📍" },
-];
-
 export default function Frame() {
   // Scroll & Parallax hooks
   const { scrollYProgress } = useScroll();
@@ -409,7 +399,6 @@ export default function Frame() {
   } | null>(null);
   const [activeAgendaIdx, setActiveAgendaIdx] = useState<number | null>(null);
   const [activeFaqIdx, setActiveFaqIdx] = useState<number | null>(null);
-  const [activeRealmIdx, setActiveRealmIdx] = useState(0);
   const [showRegisterModal, setShowRegisterModal] = useState(false);
   const [regSubmitted, setRegSubmitted] = useState(false);
   const [regForm, setRegForm] = useState({
@@ -431,17 +420,6 @@ export default function Frame() {
     window.addEventListener("mousemove", handleMouseMove, { passive: true });
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
-
-  useEffect(() => {
-    const unsubscribe = scrollYProgress.on("change", (v) => {
-      const idx = Math.min(
-        REALMS.length - 1,
-        Math.max(0, Math.floor(v * REALMS.length))
-      );
-      setActiveRealmIdx(idx);
-    });
-    return () => unsubscribe();
-  }, [scrollYProgress]);
 
   const triggerToast = (msg: string) => {
     setToastMessage(msg);
@@ -510,61 +488,22 @@ export default function Frame() {
 
   return (
     <div
-      className="bg-white relative w-full overflow-x-hidden h-[642.86vw] select-none"
+      className="bg-white relative w-full overflow-x-hidden min-h-screen select-none"
       data-node-id="253:27"
     >
-      {/* Interactive Cursor Glow Overlay (subtle, non-blocking) */}
+      {/* Interactive Cursor Glow Overlay (subtle, non-blocking, desktop only) */}
       <div
-        className="pointer-events-none fixed inset-0 z-40 transition-opacity duration-300 hidden md:block"
+        className="pointer-events-none fixed inset-0 z-40 transition-opacity duration-300 hidden lg:block"
         style={{
           background: `radial-gradient(380px circle at ${mousePos.x}px ${mousePos.y}px, rgba(115, 201, 255, 0.11), transparent 70%)`,
         }}
       />
 
-      {/* Hack the North-Side Realm Depth Navigator */}
-      <div className="fixed right-3 md:right-5 top-1/2 -translate-y-1/2 z-50 flex flex-col items-end gap-2 pointer-events-auto">
-        <div
-          className="bg-[#051829]/85 backdrop-blur-md border border-white/25 rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.45)] flex flex-col items-center gap-2"
-          style={{ padding: "14px 14px", minWidth: "68px" }}
-        >
-          <span className="font-['Lekton:Bold',monospace] text-[10px] tracking-wider text-[#96e6ff] uppercase whitespace-nowrap">
-            {REALMS[activeRealmIdx]?.altitude}
-          </span>
-          <div className="w-full h-[1px] bg-white/15" />
-          {REALMS.map((realm, idx) => {
-            const isActive = idx === activeRealmIdx;
-            return (
-              <button
-                key={realm.id}
-                onClick={() => scrollToVw(realm.topVw)}
-                title={`${realm.name} (${realm.altitude})`}
-                className="group relative flex items-center justify-center w-6 h-6 rounded-full transition-all duration-300 cursor-pointer"
-              >
-                <span
-                  className="pointer-events-none absolute right-9 opacity-0 group-hover:opacity-100 transition-all duration-200 translate-x-1 group-hover:translate-x-0 bg-[#051829]/95 border border-white/20 text-white text-[11px] font-['League_Spartan:Bold',sans-serif] tracking-wider whitespace-nowrap px-3 py-1 rounded-lg shadow-lg"
-                >
-                  {realm.icon} {realm.name}{" "}
-                  <span className="text-[#96e6ff] ml-1">{realm.altitude}</span>
-                </span>
-                <span
-                  className={`rounded-full transition-all duration-300 ${
-                    isActive
-                      ? "w-3.5 h-3.5 ring-4 ring-white/25 scale-110"
-                      : "w-2 h-2 opacity-60 group-hover:opacity-100 group-hover:scale-125"
-                  }`}
-                  style={{ backgroundColor: realm.color }}
-                />
-              </button>
-            );
-          })}
-        </div>
-      </div>
-
       {/* Hack the North-Style Interactive Quest XP Companion Pill (Bottom-Right) */}
       <motion.div
         initial={{ opacity: 1, y: 0 }}
         animate={{ opacity: 1, y: 0 }}
-        className="fixed right-3 md:right-5 bottom-4 z-50 bg-[#061a2e]/90 backdrop-blur-md border border-[#96e6ff]/35 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.5)] flex items-center gap-3 text-white"
+        className="fixed right-3 md:right-5 bottom-3 md:bottom-4 z-50 bg-[#061a2e]/90 backdrop-blur-md border border-[#96e6ff]/35 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.5)] flex items-center gap-3 text-white scale-90 sm:scale-100 origin-bottom-right"
         style={{ padding: "10px 16px" }}
       >
         <button
@@ -619,8 +558,12 @@ export default function Frame() {
       </AnimatePresence>
 
       {/* ===================================================================== */}
-      {/* HERO BACKGROUND & TOP FADE                                            */}
+      {/* DESKTOP ARTBOARD (>= 1024px: EXACT FIGMA CANVAS PRESERVED 100%)       */}
       {/* ===================================================================== */}
+      <div className="hidden lg:block relative w-full overflow-x-hidden h-[642.86vw]">
+        {/* ===================================================================== */}
+        {/* HERO BACKGROUND & TOP FADE                                            */}
+        {/* ===================================================================== */}
       <motion.div
         style={{ y: skyBgY }}
         className="absolute inset-[0_0_88.64%_0]"
@@ -3597,6 +3540,28 @@ export default function Frame() {
           <br aria-hidden="true" />
           The department is nationally and state-level recognised for excellence in its BCA programmes, ranking among the top institutions in India and consistently securing leading positions among colleges in Bengaluru.
         </p>
+      </div>
+      </div>
+
+      {/* ===================================================================== */}
+      {/* MOBILE & TABLET LAYOUT (< 1024px: RESPONSIVE & TOUCH OPTIMIZED)       */}
+      {/* ===================================================================== */}
+      <div className="block lg:hidden w-full overflow-x-hidden">
+        <MobileView
+          onRegisterClick={() => {
+            setRegSubmitted(false);
+            setShowRegisterModal(true);
+          }}
+          onInfoClick={(tab) => setActiveFooterModal(tab)}
+          onPenguinClick={handlePenguinClick}
+          activePenguinBubble={activePenguinBubble}
+          triggerToast={triggerToast}
+          setXp={setXp}
+          activeFaqIdx={activeFaqIdx}
+          setActiveFaqIdx={setActiveFaqIdx}
+          PROJECT_IDEAS={PROJECT_IDEAS}
+          FAQ_EXTRAS={FAQ_EXTRAS}
+        />
       </div>
 
       {/* ===================================================================== */}
