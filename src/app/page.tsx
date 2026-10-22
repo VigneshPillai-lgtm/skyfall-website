@@ -8,7 +8,6 @@ import {
   useTransform,
   useSpring,
 } from "framer-motion";
-import MobileView from "@/components/MobileView";
 
 const imgBackgroundImage = "/assets/figma_export/8c0cf4cd179d56f6894f2e160144c73f86ac98f1.png";
 const imgTopFade = "/assets/figma_export/f979ec24a3438e8f882c1a1ae6d19c847ddd4d7b.png";
@@ -503,7 +502,7 @@ export default function Frame() {
       <motion.div
         initial={{ opacity: 1, y: 0 }}
         animate={{ opacity: 1, y: 0 }}
-        className="fixed right-3 md:right-5 bottom-3 md:bottom-4 z-50 bg-[#061a2e]/90 backdrop-blur-md border border-[#96e6ff]/35 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.5)] flex items-center gap-3 text-white scale-90 sm:scale-100 origin-bottom-right"
+        className="fixed right-2 sm:right-4 md:right-5 bottom-2 sm:bottom-3 md:bottom-4 z-50 bg-[#061a2e]/90 backdrop-blur-md border border-[#96e6ff]/35 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.5)] flex items-center gap-3 text-white scale-[0.68] sm:scale-85 lg:scale-100 origin-bottom-right"
         style={{ padding: "10px 16px" }}
       >
         <button
@@ -550,7 +549,7 @@ export default function Frame() {
             initial={{ opacity: 0, y: -25, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.9 }}
-            className="fixed top-5 left-1/2 -translate-x-1/2 z-50 bg-[#061a2e]/95 backdrop-blur-md border border-[#96e6ff]/50 text-white px-5 py-2.5 rounded-full shadow-[0_0_30px_rgba(40,164,230,0.45)] font-['League_Spartan:Bold',sans-serif] text-xs md:text-sm tracking-wider whitespace-nowrap"
+            className="fixed top-3 sm:top-5 left-1/2 -translate-x-1/2 z-50 bg-[#061a2e]/95 backdrop-blur-md border border-[#96e6ff]/50 text-white px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-full shadow-[0_0_30px_rgba(40,164,230,0.45)] font-['League_Spartan:Bold',sans-serif] text-[10px] sm:text-xs md:text-sm tracking-wider max-w-[92vw] text-center whitespace-normal sm:whitespace-nowrap"
           >
             {toastMessage}
           </motion.div>
@@ -558,9 +557,9 @@ export default function Frame() {
       </AnimatePresence>
 
       {/* ===================================================================== */}
-      {/* DESKTOP ARTBOARD (>= 1024px: EXACT FIGMA CANVAS PRESERVED 100%)       */}
+      {/* UNIFIED ARTBOARD (ALL DEVICES: EXACT FIGMA UI, ZOOMED ON PHONE/TABLET)*/}
       {/* ===================================================================== */}
-      <div className="hidden lg:block relative w-full overflow-x-hidden h-[642.86vw]">
+      <div className="relative w-full overflow-x-hidden h-[642.86vw]">
         {/* ===================================================================== */}
         {/* HERO BACKGROUND & TOP FADE                                            */}
         {/* ===================================================================== */}
@@ -602,100 +601,111 @@ export default function Frame() {
         data-node-id="261:10"
       >
         {/* Main Skyfall Hero Logo with Parallax + Float + Interactive 3D Hover */}
-        <motion.div
-          style={{ y: heroLogoY }}
-          whileHover={{
-            scale: 1.04,
-            rotate: -1.5,
-            filter: "drop-shadow(0 0 2vw rgba(255, 246, 143, 0.75))",
-          }}
-          whileTap={{ scale: 0.96 }}
-          onClick={() => {
-            setXp((prev) => prev + 10);
-            triggerToast("⭐ Welcome to Skyfall 2026! Ready to build something legendary?");
-          }}
-          className="absolute inset-[28.75%_19.84%_43.75%_22.22%] cursor-pointer z-10"
-          data-name="mail skyfall logo"
-          data-node-id="261:11"
-        >
-          <div className="absolute inset-0 overflow-hidden pointer-events-none animate-htn-float">
-            <img
-              alt="Skyfall Logo"
-              className="absolute h-[276.7%] left-[-15.43%] max-w-none top-[-67.29%] w-[122.07%]"
-              src={imgMailSkyfallLogo}
-            />
+        <div className="absolute inset-0 pointer-events-none z-10 max-md:scale-[1.2] md:max-lg:scale-[1.1] origin-[51%_42.5%]">
+          <motion.div
+            style={{ y: heroLogoY }}
+            whileHover={{
+              scale: 1.04,
+              rotate: -1.5,
+              filter: "drop-shadow(0 0 2vw rgba(255, 246, 143, 0.75))",
+            }}
+            whileTap={{ scale: 0.96 }}
+            onClick={() => {
+              setXp((prev) => prev + 10);
+              triggerToast("⭐ Welcome to Skyfall 2026! Ready to build something legendary?");
+            }}
+            className="absolute inset-[28.75%_19.84%_43.75%_22.22%] cursor-pointer pointer-events-auto"
+            data-name="mail skyfall logo"
+            data-node-id="261:11"
+          >
+            <div className="absolute inset-0 overflow-hidden pointer-events-none animate-htn-float">
+              <img
+                alt="Skyfall Logo"
+                className="absolute h-[276.7%] left-[-15.43%] max-w-none top-[-67.29%] w-[122.07%]"
+                src={imgMailSkyfallLogo}
+              />
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Hero Top Header Texts & Glass Pill */}
+        <div className="absolute inset-0 pointer-events-none max-md:scale-[1.24] md:max-lg:scale-[1.12] origin-[50%_21%]">
+          <div
+            className="absolute inset-[21%_25%_75.5%_25%]"
+            data-name="Glass Morphism"
+            data-node-id="261:14"
+          >
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <img alt="" className="absolute left-0 max-w-none size-full top-0" src={imgGlassMorphism} />
+            </div>
           </div>
-        </motion.div>
 
-        <div
-          className="absolute inset-[21%_25%_75.5%_25%]"
-          data-name="Glass Morphism"
-          data-node-id="261:14"
-        >
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <img alt="" className="absolute left-0 max-w-none size-full top-0" src={imgGlassMorphism} />
+          <p
+            className="absolute font-['League_Spartan:Bold',sans-serif] font-bold inset-[15%_10%_auto_10%] w-[80%] text-center leading-[1.5873vw] text-[1.4vw] text-shadow-[0.0794vw_0.0794vw_0.3968vw_rgba(0,0,0,0.32)] text-white tracking-[0.2024vw] whitespace-nowrap"
+            data-node-id="261:12"
+          >
+            SCHOOL OF COMPUTATIONAL AND PHYSICAL SCIENCES
+          </p>
+
+          <div
+            className="absolute inset-[21%_25%_75.5%_25%] flex items-center justify-center text-center pointer-events-none"
+            data-node-id="261:13"
+          >
+            <p className="font-['League_Spartan:Bold',sans-serif] font-bold leading-none text-[1.18vw] text-shadow-[0.0794vw_0.0794vw_0.3968vw_rgba(66,66,66,0.58)] text-white tracking-[0.16vw] whitespace-nowrap pt-[0.2vw]">
+              DEPARTMENT OF COMPUTER APPLICATIONS
+            </p>
+          </div>
+
+          <div
+            className="absolute top-[24.2%] bottom-[73.0%] left-0 right-0 flex items-center justify-center text-center pointer-events-none"
+            data-node-id="261:15"
+          >
+            <p className="bg-clip-text bg-gradient-to-r font-['Inter:Bold',sans-serif] font-bold from-[#fff9c9] leading-[1.5873vw] not-italic text-[1.1111vw] text-[transparent] to-[#ffc3f2] whitespace-nowrap">
+              O R G A N I S E S
+            </p>
           </div>
         </div>
 
-        <p
-          className="absolute font-['League_Spartan:Bold',sans-serif] font-bold inset-[15%_10%_auto_10%] w-[80%] text-center leading-[1.5873vw] text-[1.4vw] text-shadow-[0.0794vw_0.0794vw_0.3968vw_rgba(0,0,0,0.32)] text-white tracking-[0.2024vw] whitespace-nowrap"
-          data-node-id="261:12"
-        >
-          SCHOOL OF COMPUTATIONAL AND PHYSICAL SCIENCES
-        </p>
+        {/* Hero Tagline Banner & Subtitle */}
+        <div className="absolute inset-0 pointer-events-none max-md:scale-[1.22] md:max-lg:scale-[1.11] origin-[50%_66%]">
+          <div
+            className="absolute inset-[60%_18.25%_33.75%_17.46%]"
+            data-name="backgrund base"
+            data-node-id="261:17"
+          >
+            <img alt="" className="absolute block max-w-none size-full" src={imgBackgrundBase} />
+          </div>
 
-        <div
-          className="absolute inset-[21%_25%_75.5%_25%] flex items-center justify-center text-center pointer-events-none"
-          data-node-id="261:13"
-        >
-          <p className="font-['League_Spartan:Bold',sans-serif] font-bold leading-none text-[1.18vw] text-shadow-[0.0794vw_0.0794vw_0.3968vw_rgba(66,66,66,0.58)] text-white tracking-[0.16vw] whitespace-nowrap pt-[0.2vw]">
-            DEPARTMENT OF COMPUTER APPLICATIONS
-          </p>
-        </div>
+          <div
+            className="absolute flex items-center justify-center font-['League_Spartan:Bold',sans-serif] font-bold inset-[60%_18.25%_33.75%_17.46%] leading-none text-[1.6667vw] text-center text-shadow-[0.0794vw_0.0794vw_0.3968vw_rgba(0,0,0,0.53)] text-white tracking-[0.25vw] pt-[0.22vw]"
+            data-node-id="261:16"
+          >
+            <p className="whitespace-nowrap">
+              <span className="leading-[1.5873vw]">{`NATIONAL `}</span>
+              <span className="leading-[1.5873vw] text-[#ffcdf6]">TEENS</span>
+              <span className="leading-[1.5873vw]">{` HACKATHON FOR `}</span>
+              <span className="leading-[1.5873vw] text-[#fff68f]">
+                PARTICIPANTS
+              </span>
+              <span className="leading-[1.5873vw]">{` AGED 13 -18`}</span>
+            </p>
+          </div>
 
-        <div
-          className="absolute top-[24.2%] bottom-[73.0%] left-0 right-0 flex items-center justify-center text-center pointer-events-none"
-          data-node-id="261:15"
-        >
-          <p className="bg-clip-text bg-gradient-to-r font-['Inter:Bold',sans-serif] font-bold from-[#fff9c9] leading-[1.5873vw] not-italic text-[1.1111vw] text-[transparent] to-[#ffc3f2] whitespace-nowrap">
-            O R G A N I S E S
-          </p>
-        </div>
-
-        <div
-          className="absolute inset-[60%_18.25%_33.75%_17.46%]"
-          data-name="backgrund base"
-          data-node-id="261:17"
-        >
-          <img alt="" className="absolute block max-w-none size-full" src={imgBackgrundBase} />
-        </div>
-
-        <div
-          className="absolute flex items-center justify-center font-['League_Spartan:Bold',sans-serif] font-bold inset-[60%_18.25%_33.75%_17.46%] leading-none text-[1.6667vw] text-center text-shadow-[0.0794vw_0.0794vw_0.3968vw_rgba(0,0,0,0.53)] text-white tracking-[0.25vw] pt-[0.22vw]"
-          data-node-id="261:16"
-        >
-          <p className="whitespace-nowrap">
-            <span className="leading-[1.5873vw]">{`NATIONAL `}</span>
-            <span className="leading-[1.5873vw] text-[#ffcdf6]">TEENS</span>
-            <span className="leading-[1.5873vw]">{` HACKATHON FOR `}</span>
-            <span className="leading-[1.5873vw] text-[#fff68f]">
-              PARTICIPANTS
-            </span>
-            <span className="leading-[1.5873vw]">{` AGED 13 -18`}</span>
-          </p>
-        </div>
-
-        <div
-          className="absolute bottom-1/4 flex flex-col font-['League_Spartan:ExtraBold',sans-serif] font-extrabold justify-center items-center leading-none left-[18%] right-[18%] text-[1.4286vw] text-center text-shadow-[0.0794vw_0.0794vw_0.3968vw_rgba(0,0,0,0.53)] text-white top-[69.2%] tracking-[0.2143vw]"
-          data-node-id="261:18"
-        >
-          <p className="leading-[1.75vw]">
-            WHERE CREATIVITY MEETS TECHNOLOGY THROUGH HANDSON BUILDING, GUIDED CHALLENGES, AND INTERACTIVE EXPERIENCES
-          </p>
+          <div
+            className="absolute bottom-1/4 flex flex-col font-['League_Spartan:ExtraBold',sans-serif] font-extrabold justify-center items-center leading-none left-[18%] right-[18%] text-[1.4286vw] text-center text-shadow-[0.0794vw_0.0794vw_0.3968vw_rgba(0,0,0,0.53)] text-white top-[69.2%] tracking-[0.2143vw]"
+            data-node-id="261:18"
+          >
+            <p className="leading-[1.75vw]">
+              WHERE CREATIVITY MEETS TECHNOLOGY THROUGH HANDSON BUILDING, GUIDED CHALLENGES, AND INTERACTIVE EXPERIENCES
+            </p>
+          </div>
         </div>
 
         {/* Interactive Hero Buttons: REGISTER NOW & VIEW PROJECTS */}
-        <div className="absolute contents inset-[80%_36.6%_15.02%_36.51%]" data-node-id="261:21">
+        <div
+          className="absolute inset-0 pointer-events-none z-20 max-md:scale-[1.34] md:max-lg:scale-[1.18] origin-[50%_82.5%]"
+          data-node-id="261:21"
+        >
           {/* REGISTER NOW Button */}
           <motion.div
             whileHover={{
@@ -778,7 +788,7 @@ export default function Frame() {
         </div>
 
         {/* Hero Corner Penguin #1 */}
-        <div className="absolute flex inset-[81.24%_83.21%_0.59%_5.26%] items-center justify-center z-20">
+        <div className="absolute flex inset-[81.24%_83.21%_0.59%_5.26%] items-center justify-center z-20 max-md:scale-[1.18] md:max-lg:scale-[1.08] origin-center">
           <div className="-scale-y-100 flex-none rotate-[-178.88deg] size-[11.3127vw]">
             <motion.div
               whileHover={{ scale: 1.14, rotate: 6 }}
@@ -802,7 +812,7 @@ export default function Frame() {
             <motion.div
               initial={{ opacity: 0, y: 8, scale: 0.85 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              className="absolute -top-[3.2vw] left-[8vw] bg-white/95 text-[#004aad] font-['League_Spartan:Bold',sans-serif] text-[0.9vw] px-[1vw] py-[0.5vw] rounded-2xl shadow-xl whitespace-nowrap border-2 border-[#73c9ff] z-30"
+              className="absolute -top-[3.2vw] left-[8vw] bg-white/95 text-[#004aad] font-['League_Spartan:Bold',sans-serif] text-[1.9vw] sm:text-[1.2vw] lg:text-[0.9vw] px-[1.5vw] py-[0.7vw] lg:px-[1vw] lg:py-[0.5vw] rounded-2xl shadow-xl whitespace-nowrap border-2 border-[#73c9ff] z-30"
             >
               {activePenguinBubble.text}
             </motion.div>
@@ -810,7 +820,7 @@ export default function Frame() {
         </div>
 
         <div
-          className="absolute inset-[3.75%_39.69%_88.9%_39.68%] overflow-clip"
+          className="absolute inset-[3.75%_39.69%_88.9%_39.68%] overflow-clip max-md:scale-[1.32] md:max-lg:scale-[1.16] origin-center"
           data-name="Clip path frame"
           data-node-id="271:16"
         >
@@ -893,108 +903,6 @@ export default function Frame() {
           </div>
         </motion.div>
 
-        {/* Cloud Penguin #2 — Perches cleanly on top edge of Box Left */}
-        <motion.div
-          whileHover={{ scale: 1.15, y: -6 }}
-          whileTap={{ scale: 0.92 }}
-          onClick={() =>
-            handlePenguinClick(
-              "penguin-cloud",
-              "Complete side quests around campus to win that Shark Plushie! 🦈✨"
-            )
-          }
-          className="absolute inset-[12.4%_53.8%_75.2%_35.09%] cursor-pointer z-20 animate-htn-penguin"
-          data-name="Rectangle"
-          data-node-id="275:73"
-        >
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <img
-              alt="Cloud Penguin"
-              className="absolute left-[-98.57%] max-w-none size-[293.47%] top-[-192.79%]"
-              src={imgRectangle4}
-            />
-          </div>
-          {activePenguinBubble?.id === "penguin-cloud" && (
-            <motion.div
-              initial={{ opacity: 0, y: 6, scale: 0.85 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              className="absolute -top-[3.2vw] left-1/2 -translate-x-1/2 bg-white/95 text-[#00638d] font-['League_Spartan:Bold',sans-serif] text-[0.85vw] px-[1vw] py-[0.45vw] rounded-2xl shadow-xl whitespace-nowrap border-2 border-[#c86ad4] z-30"
-            >
-              {activePenguinBubble.text}
-            </motion.div>
-          )}
-        </motion.div>
-
-        {/* Section Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 24, scale: 0.95 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6, type: "spring" }}
-          className="absolute inset-[9.73%_10%_85.84%_10%] flex items-center justify-center text-center pointer-events-none"
-          data-node-id="269:12"
-        >
-          <p className="font-['League_Spartan:Bold',sans-serif] font-bold leading-[3.9683vw] text-[#00638d] text-[3.0952vw] text-shadow-[0.1587vw_0vw_0vw_white] tracking-[0.031vw] whitespace-nowrap">
-            Build Cool Projects, Win Cool Rewards
-          </p>
-        </motion.div>
-
-        {/* Box Left: BUILD WHATEVER YOU LIKE! */}
-        <motion.div
-          initial={{ opacity: 0, x: -35 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.65, type: "spring", bounce: 0.3 }}
-          whileHover={{
-            y: -6,
-            scale: 1.015,
-            filter: "drop-shadow(0 1vw 2vw rgba(0, 99, 141, 0.22))",
-          }}
-          style={{ transformOrigin: "27.5% 40%" }}
-          className="absolute inset-0 pointer-events-none z-10"
-          data-name="Box Left"
-          data-node-id="272:29"
-        >
-          <div
-            className="absolute inset-[26.12%_54.87%_42.7%_8.73%] pointer-events-auto cursor-pointer"
-            onClick={() => scrollToVw(175)}
-            data-name="Box background skyblue"
-            data-node-id="272:18"
-          >
-            <img alt="" className="absolute block max-w-none size-full" src={imgBoxBackgroundSkyblue} />
-          </div>
-          <div
-            className="absolute inset-[24.78%_53.61%_44.19%_10.01%]"
-            data-name="White Box"
-            data-node-id="272:21"
-          >
-            <img alt="" className="absolute block max-w-none size-full" src={imgWhiteBox} />
-          </div>
-          {/* Cleanly aligned text stack inside White Box */}
-          <div
-            className="absolute inset-[26.6%_55.5%_46.0%_11.9%] flex flex-col justify-between pointer-events-none"
-          >
-            <p
-              className="font-['League_Spartan:Regular',sans-serif] font-normal leading-[1.9vw] text-[#3585b3] text-[1.0317vw] tracking-[0.11vw]"
-              data-node-id="272:28"
-            >
-              Skyfall is a beginner-friendly hackathon for students, where curious minds come together to explore, build, and create. A space where developers, designers, and builders collaborate to turn ideas into real projects.
-            </p>
-            <p
-              className="font-['League_Spartan:Bold',sans-serif] font-bold leading-[2.1vw] text-[#3585b3] text-[1.5873vw] tracking-[0.1488vw] whitespace-nowrap my-[0.2vw]"
-              data-node-id="272:26"
-            >
-              BUILD WHATEVER YOU LIKE!
-            </p>
-            <p
-              className="font-['League_Spartan:Regular',sans-serif] font-normal leading-[1.9vw] text-[#3585b3] text-[1.0317vw] tracking-[0.11vw]"
-              data-node-id="272:27"
-            >
-              You don’t need to know how to code. You don’t need experience. If you have an idea you can build it. From apps to hardware, or even a mix of both, With mentors and guidance.
-            </p>
-          </div>
-        </motion.div>
-
         {/* Bottom Clouds with Parallax + Reverse Drift */}
         <motion.div
           style={{ y: bottomCloudsY }}
@@ -1007,221 +915,328 @@ export default function Frame() {
           </div>
         </motion.div>
 
-        {/* Box Right Top: Quests & Activities */}
-        <motion.div
-          initial={{ opacity: 0, x: 35 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.65, delay: 0.1, type: "spring", bounce: 0.3 }}
-          whileHover={{
-            y: -6,
-            scale: 1.015,
-            filter: "drop-shadow(0 1vw 2vw rgba(200, 106, 212, 0.28))",
-          }}
-          style={{ transformOrigin: "71.4% 33%" }}
-          onClick={() => {
-            setXp((prev) => prev + 15);
-            triggerToast("🎮 Side-Quest Unlocked! Click the prizes below to inspect their XP value!");
-          }}
-          className="absolute inset-0 pointer-events-none z-10"
-          data-name="Box Right top"
-          data-node-id="275:11"
-        >
-          <div
-            className="absolute inset-[25.44%_9.31%_59.1%_50.79%] pointer-events-auto cursor-pointer"
-            data-name="Pink background text box"
-            data-node-id="275:12"
+        {/* Section Heading */}
+        <div className="absolute inset-0 pointer-events-none max-md:scale-[1.18] md:max-lg:scale-[1.09] origin-[50%_11.9%]">
+          <motion.div
+            initial={{ opacity: 0, y: 24, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.6, type: "spring" }}
+            className="absolute inset-[9.73%_10%_85.84%_10%] flex items-center justify-center text-center pointer-events-none"
+            data-node-id="269:12"
           >
-            <img alt="" className="absolute block max-w-none size-full" src={imgPinkBackgroundTextBox} />
-          </div>
-          <div
-            className="absolute inset-[24.78%_7.94%_60.46%_52.17%]"
-            data-name="White box"
-            data-node-id="275:15"
-          >
-            <img alt="" className="absolute block max-w-none size-full" src={imgWhiteBox1} />
-          </div>
-          {/* Cleanly aligned text stack inside White box */}
-          <div
-            className="absolute inset-[26.0%_9.8%_61.6%_54.0%] flex flex-col justify-center gap-[0.45vw] pointer-events-none"
-          >
-            <p
-              className="font-['League_Spartan:Bold',sans-serif] font-bold leading-[1.8vw] text-[#c86ad4] text-[1.5873vw] tracking-[0.1488vw]"
-              data-node-id="275:20"
-            >{`Quests & Activites`}</p>
-            <p
-              className="font-['League_Spartan:Medium',sans-serif] font-medium leading-[1.68vw] text-[#d876e4] text-[0.9524vw] tracking-[0.13vw]"
-              data-node-id="275:21"
-            >
-              {`Explore Skyfall through interactive side quests across the campus, turning your journey into a game. Complete quests, earn XP, then redeem rewards like plushies and goodies.`}
-              <span className="block font-['League_Spartan:Bold',sans-serif] font-bold mt-[0.2vw]">
-                LEVEL UP AS YOU GO
-              </span>
+            <p className="font-['League_Spartan:Bold',sans-serif] font-bold leading-[3.9683vw] text-[#00638d] text-[3.0952vw] text-shadow-[0.1587vw_0vw_0vw_white] tracking-[0.031vw] whitespace-nowrap">
+              Build Cool Projects, Win Cool Rewards
             </p>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
 
-        {/* Sliding Pics Deck — Interactive Goodies Carousel (Headphones, Shark Plushie, Keyboard) */}
-        <div
-          className="absolute contents left-[47.619vw] top-[38.0952vw]"
-          data-name="Sliding pics deck"
-          data-node-id="275:23"
-        >
-          <div
-            className="absolute h-[13.8476vw] left-[47.619vw] overflow-hidden top-[38.0952vw] w-[46.0317vw] z-20"
-            data-name="Yellow background"
-            data-node-id="275:29"
+        {/* Page 2 Cards & Carousel Group (Zoomed on Phone & Tablet) */}
+        <div className="absolute inset-0 pointer-events-none z-20 max-md:scale-[1.12] md:max-lg:scale-[1.06] origin-[51.2%_38.5%]">
+          {/* Cloud Penguin #2 — Perches cleanly on top edge of Box Left */}
+          <motion.div
+            whileHover={{ scale: 1.15, y: -6 }}
+            whileTap={{ scale: 0.92 }}
+            onClick={() =>
+              handlePenguinClick(
+                "penguin-cloud",
+                "Complete side quests around campus to win that Shark Plushie! 🦈✨"
+              )
+            }
+            className="absolute inset-[12.4%_53.8%_75.2%_35.09%] cursor-pointer pointer-events-auto z-20 animate-htn-penguin"
+            data-name="Rectangle"
+            data-node-id="275:73"
           >
-            {/* Original Figma Yellow Gradient Box */}
-            <div
-              className="absolute inset-[0.37%_3.62%_2.2%_5.44%] pointer-events-none"
-              data-name="Yellow box"
-              data-node-id="275:31"
-              style={{
-                backgroundImage:
-                  "linear-gradient(90deg, rgba(249, 255, 162, 0.03) 0%, rgb(255, 248, 172) 16.346%, rgb(255, 248, 172) 91.346%, rgba(249, 255, 162, 0.29) 100%)",
-              }}
-            />
-
-            {/* Top White Dashed Line */}
-            <div
-              className="absolute contents inset-[5.73%_0_85.97%_0] pointer-events-none"
-              data-name="white line top"
-              data-node-id="275:32"
-            >
-              <div
-                className="absolute inset-[5.73%_0_85.97%_0] mask-position-[0vw_0vw,_-0.0413vw_-0.0063vw]"
-                data-name="Clip path frame"
-                data-node-id="275:37"
-                style={{
-                  maskImage: `url('${imgClipPathFrame}'), url('${imgClipPathFrame1}')`,
-                }}
-              >
-                <img alt="" className="absolute inset-0 block max-w-none size-full" src={imgClipPathFrame2} />
-              </div>
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <img
+                alt="Cloud Penguin"
+                className="absolute left-[-98.57%] max-w-none size-[293.47%] top-[-192.79%]"
+                src={imgRectangle4}
+              />
             </div>
-
-            {/* Bottom White Dashed Line */}
-            <div
-              className="absolute contents inset-[85.97%_0_5.73%_0] pointer-events-none"
-              data-name="WHite line bottom"
-              data-node-id="275:40"
-            >
-              <div
-                className="absolute inset-[85.97%_0_5.73%_0] mask-position-[0vw_0vw,_-0.0413vw_-0.0063vw]"
-                data-name="Clip path frame"
-                data-node-id="275:45"
-                style={{
-                  maskImage: `url('${imgClipPathFrame}'), url('${imgClipPathFrame1}')`,
-                }}
-              >
-                <img alt="" className="absolute inset-0 block max-w-none size-full" src={imgClipPathFrame2} />
-              </div>
-            </div>
-
-            {/* Smooth Rightward Sliding Goodies Track */}
-            <div
-              className="absolute inset-[7%_3.6%_7%_5.5%] overflow-hidden flex items-center"
-              style={{
-                maskImage:
-                  "linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%)",
-                WebkitMaskImage:
-                  "linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%)",
-              }}
-            >
-              <div
-                className="flex items-center gap-[1.35vw] pr-[1.35vw]"
-                style={{
-                  animation: "htn-goodies-marquee 15s linear infinite",
-                  animationPlayState: isGoodiePaused ? "paused" : "running",
-                }}
-              >
-                {[...GOODIES_ITEMS, ...GOODIES_ITEMS, ...GOODIES_ITEMS, ...GOODIES_ITEMS].map(
-                  (item, idx) => {
-                    const isSelected = activeReward?.name === item.name;
-                    return (
-                      <motion.div
-                        key={`${item.id}-${idx}`}
-                        onMouseEnter={() => setIsGoodiePaused(true)}
-                        onMouseLeave={() => setIsGoodiePaused(false)}
-                        whileHover={{
-                          y: -9,
-                          scale: 1.06,
-                          filter: "drop-shadow(0 0.65vw 1.1vw rgba(110, 90, 0, 0.32))",
-                        }}
-                        whileTap={{ scale: 0.96 }}
-                        transition={{ type: "spring", stiffness: 320, damping: 20 }}
-                        onClick={() => {
-                          setActiveReward({
-                            name: item.name,
-                            xpCost: item.xpCost,
-                            desc: item.desc,
-                          });
-                          setXp((prev) => prev + 10);
-                        }}
-                        className={`relative flex-none w-[12.25vw] h-[8.1vw] cursor-pointer select-none ${
-                          isSelected ? "ring-2 ring-[#c86ad4] rounded-[0.2vw]" : ""
-                        }`}
-                      >
-                        {/* Figma White Card with #6E5A00 Dashed Border */}
-                        <img
-                          alt=""
-                          className="absolute inset-0 block w-full h-full max-w-none pointer-events-none"
-                          src={imgGroup1}
-                        />
-
-                        {/* Product Image — Cleanly Framed Inside the White Card */}
-                        <div className="absolute inset-[6%_8%_16%_8%] flex items-center justify-center overflow-hidden pointer-events-none">
-                          <img
-                            alt={item.shortLabel}
-                            src={item.img}
-                            className={`max-h-full max-w-full object-contain transition-transform duration-300 ${item.rotateClass} ${item.scaleClass}`}
-                          />
-                        </div>
-
-                        {/* Bottom Label & XP Pill */}
-                        <div className="absolute bottom-[5%] left-[6%] right-[6%] flex items-center justify-between px-[0.35vw] py-[0.1vw] bg-[#fff8ac]/90 rounded-[0.25vw] border border-[#6e5a00]/25 pointer-events-none">
-                          <span className="font-['League_Spartan:Bold',sans-serif] font-bold text-[#6e5a00] text-[0.62vw] tracking-[0.03vw] truncate">
-                            {item.shortLabel}
-                          </span>
-                          <span className="font-['League_Spartan:Black',sans-serif] font-black text-[#c86ad4] text-[0.6vw] whitespace-nowrap ml-[0.2vw]">
-                            {item.xpCost}
-                          </span>
-                        </div>
-                      </motion.div>
-                    );
-                  }
-                )}
-              </div>
-            </div>
-          </div>
-
-          {/* Interactive Reward Tooltip Badge */}
-          <AnimatePresence>
-            {activeReward && (
+            {activePenguinBubble?.id === "penguin-cloud" && (
               <motion.div
-                initial={{ opacity: 0, y: 10, scale: 0.9 }}
+                initial={{ opacity: 0, y: 6, scale: 0.85 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, y: 10, scale: 0.9 }}
-                onClick={() => setActiveReward(null)}
-                className="absolute left-[54vw] top-[52.8vw] z-30 bg-white/95 backdrop-blur-md border-2 border-[#c86ad4] rounded-2xl px-[1.4vw] py-[0.8vw] shadow-xl cursor-pointer flex items-center gap-[1vw]"
+                className="absolute -top-[3.2vw] left-1/2 -translate-x-1/2 bg-white/95 text-[#00638d] font-['League_Spartan:Bold',sans-serif] text-[1.8vw] sm:text-[1.15vw] lg:text-[0.85vw] px-[1.4vw] py-[0.6vw] lg:px-[1vw] lg:py-[0.45vw] rounded-2xl shadow-xl whitespace-nowrap border-2 border-[#c86ad4] z-30"
               >
-                <div>
-                  <div className="flex items-center gap-2">
-                    <span className="font-['League_Spartan:Black',sans-serif] text-[#00638d] text-[1.05vw]">
-                      {activeReward.name}
-                    </span>
-                    <span className="bg-[#c86ad4] text-white font-['League_Spartan:Bold',sans-serif] text-[0.75vw] px-[0.6vw] py-[0.15vw] rounded-full">
-                      {activeReward.xpCost}
-                    </span>
-                  </div>
-                  <p className="font-['League_Spartan:Medium',sans-serif] text-[#3585b3] text-[0.85vw] mt-[0.2vw]">
-                    {activeReward.desc}
-                  </p>
-                </div>
+                {activePenguinBubble.text}
               </motion.div>
             )}
-          </AnimatePresence>
+          </motion.div>
+
+          {/* Box Left: BUILD WHATEVER YOU LIKE! */}
+          <motion.div
+            initial={{ opacity: 0, x: -35 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.65, type: "spring", bounce: 0.3 }}
+            whileHover={{
+              y: -6,
+              scale: 1.015,
+              filter: "drop-shadow(0 1vw 2vw rgba(0, 99, 141, 0.22))",
+            }}
+            style={{ transformOrigin: "27.5% 40%" }}
+            className="absolute inset-0 pointer-events-none z-10"
+            data-name="Box Left"
+            data-node-id="272:29"
+          >
+            <div
+              className="absolute inset-[26.12%_54.87%_42.7%_8.73%] pointer-events-auto cursor-pointer"
+              onClick={() => scrollToVw(175)}
+              data-name="Box background skyblue"
+              data-node-id="272:18"
+            >
+              <img alt="" className="absolute block max-w-none size-full" src={imgBoxBackgroundSkyblue} />
+            </div>
+            <div
+              className="absolute inset-[24.78%_53.61%_44.19%_10.01%]"
+              data-name="White Box"
+              data-node-id="272:21"
+            >
+              <img alt="" className="absolute block max-w-none size-full" src={imgWhiteBox} />
+            </div>
+            {/* Cleanly aligned text stack inside White Box */}
+            <div
+              className="absolute inset-[26.6%_55.5%_46.0%_11.9%] flex flex-col justify-between pointer-events-none"
+            >
+              <p
+                className="font-['League_Spartan:Regular',sans-serif] font-normal leading-[1.9vw] text-[#3585b3] text-[1.0317vw] tracking-[0.11vw]"
+                data-node-id="272:28"
+              >
+                Skyfall is a beginner-friendly hackathon for students, where curious minds come together to explore, build, and create. A space where developers, designers, and builders collaborate to turn ideas into real projects.
+              </p>
+              <p
+                className="font-['League_Spartan:Bold',sans-serif] font-bold leading-[2.1vw] text-[#3585b3] text-[1.5873vw] tracking-[0.1488vw] whitespace-nowrap my-[0.2vw]"
+                data-node-id="272:26"
+              >
+                BUILD WHATEVER YOU LIKE!
+              </p>
+              <p
+                className="font-['League_Spartan:Regular',sans-serif] font-normal leading-[1.9vw] text-[#3585b3] text-[1.0317vw] tracking-[0.11vw]"
+                data-node-id="272:27"
+              >
+                You don’t need to know how to code. You don’t need experience. If you have an idea you can build it. From apps to hardware, or even a mix of both, With mentors and guidance.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Box Right Top: Quests & Activities */}
+          <motion.div
+            initial={{ opacity: 0, x: 35 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.65, delay: 0.1, type: "spring", bounce: 0.3 }}
+            whileHover={{
+              y: -6,
+              scale: 1.015,
+              filter: "drop-shadow(0 1vw 2vw rgba(200, 106, 212, 0.28))",
+            }}
+            style={{ transformOrigin: "71.4% 33%" }}
+            onClick={() => {
+              setXp((prev) => prev + 15);
+              triggerToast("🎮 Side-Quest Unlocked! Click the prizes below to inspect their XP value!");
+            }}
+            className="absolute inset-0 pointer-events-none z-10"
+            data-name="Box Right top"
+            data-node-id="275:11"
+          >
+            <div
+              className="absolute inset-[25.44%_9.31%_59.1%_50.79%] pointer-events-auto cursor-pointer"
+              data-name="Pink background text box"
+              data-node-id="275:12"
+            >
+              <img alt="" className="absolute block max-w-none size-full" src={imgPinkBackgroundTextBox} />
+            </div>
+            <div
+              className="absolute inset-[24.78%_7.94%_60.46%_52.17%]"
+              data-name="White box"
+              data-node-id="275:15"
+            >
+              <img alt="" className="absolute block max-w-none size-full" src={imgWhiteBox1} />
+            </div>
+            {/* Cleanly aligned text stack inside White box */}
+            <div
+              className="absolute inset-[26.0%_9.8%_61.6%_54.0%] flex flex-col justify-center gap-[0.45vw] pointer-events-none"
+            >
+              <p
+                className="font-['League_Spartan:Bold',sans-serif] font-bold leading-[1.8vw] text-[#c86ad4] text-[1.5873vw] tracking-[0.1488vw]"
+                data-node-id="275:20"
+              >{`Quests & Activites`}</p>
+              <p
+                className="font-['League_Spartan:Medium',sans-serif] font-medium leading-[1.68vw] text-[#d876e4] text-[0.9524vw] tracking-[0.13vw]"
+                data-node-id="275:21"
+              >
+                {`Explore Skyfall through interactive side quests across the campus, turning your journey into a game. Complete quests, earn XP, then redeem rewards like plushies and goodies.`}
+                <span className="block font-['League_Spartan:Bold',sans-serif] font-bold mt-[0.2vw]">
+                  LEVEL UP AS YOU GO
+                </span>
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Sliding Pics Deck — Interactive Goodies Carousel (Headphones, Shark Plushie, Keyboard) */}
+          <div
+            className="absolute contents left-[47.619vw] top-[38.0952vw]"
+            data-name="Sliding pics deck"
+            data-node-id="275:23"
+          >
+            <div
+              className="absolute h-[13.8476vw] left-[47.619vw] overflow-hidden top-[38.0952vw] w-[46.0317vw] z-20 pointer-events-auto"
+              data-name="Yellow background"
+              data-node-id="275:29"
+            >
+              {/* Original Figma Yellow Gradient Box */}
+              <div
+                className="absolute inset-[0.37%_3.62%_2.2%_5.44%] pointer-events-none"
+                data-name="Yellow box"
+                data-node-id="275:31"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(90deg, rgba(249, 255, 162, 0.03) 0%, rgb(255, 248, 172) 16.346%, rgb(255, 248, 172) 91.346%, rgba(249, 255, 162, 0.29) 100%)",
+                }}
+              />
+
+              {/* Top White Dashed Line */}
+              <div
+                className="absolute contents inset-[5.73%_0_85.97%_0] pointer-events-none"
+                data-name="white line top"
+                data-node-id="275:32"
+              >
+                <div
+                  className="absolute inset-[5.73%_0_85.97%_0] mask-position-[0vw_0vw,_-0.0413vw_-0.0063vw]"
+                  data-name="Clip path frame"
+                  data-node-id="275:37"
+                  style={{
+                    maskImage: `url('${imgClipPathFrame}'), url('${imgClipPathFrame1}')`,
+                  }}
+                >
+                  <img alt="" className="absolute inset-0 block max-w-none size-full" src={imgClipPathFrame2} />
+                </div>
+              </div>
+
+              {/* Bottom White Dashed Line */}
+              <div
+                className="absolute contents inset-[85.97%_0_5.73%_0] pointer-events-none"
+                data-name="WHite line bottom"
+                data-node-id="275:40"
+              >
+                <div
+                  className="absolute inset-[85.97%_0_5.73%_0] mask-position-[0vw_0vw,_-0.0413vw_-0.0063vw]"
+                  data-name="Clip path frame"
+                  data-node-id="275:45"
+                  style={{
+                    maskImage: `url('${imgClipPathFrame}'), url('${imgClipPathFrame1}')`,
+                  }}
+                >
+                  <img alt="" className="absolute inset-0 block max-w-none size-full" src={imgClipPathFrame2} />
+                </div>
+              </div>
+
+              {/* Smooth Rightward Sliding Goodies Track */}
+              <div
+                className="absolute inset-[7%_3.6%_7%_5.5%] overflow-hidden flex items-center"
+                style={{
+                  maskImage:
+                    "linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%)",
+                  WebkitMaskImage:
+                    "linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%)",
+                }}
+              >
+                <div
+                  className="flex items-center gap-[1.35vw] pr-[1.35vw]"
+                  style={{
+                    animation: "htn-goodies-marquee 15s linear infinite",
+                    animationPlayState: isGoodiePaused ? "paused" : "running",
+                  }}
+                >
+                  {[...GOODIES_ITEMS, ...GOODIES_ITEMS, ...GOODIES_ITEMS, ...GOODIES_ITEMS].map(
+                    (item, idx) => {
+                      const isSelected = activeReward?.name === item.name;
+                      return (
+                        <motion.div
+                          key={`${item.id}-${idx}`}
+                          onMouseEnter={() => setIsGoodiePaused(true)}
+                          onMouseLeave={() => setIsGoodiePaused(false)}
+                          whileHover={{
+                            y: -9,
+                            scale: 1.06,
+                            filter: "drop-shadow(0 0.65vw 1.1vw rgba(110, 90, 0, 0.32))",
+                          }}
+                          whileTap={{ scale: 0.96 }}
+                          transition={{ type: "spring", stiffness: 320, damping: 20 }}
+                          onClick={() => {
+                            setActiveReward({
+                              name: item.name,
+                              xpCost: item.xpCost,
+                              desc: item.desc,
+                            });
+                            setXp((prev) => prev + 10);
+                          }}
+                          className={`relative flex-none w-[12.25vw] h-[8.1vw] cursor-pointer select-none ${
+                            isSelected ? "ring-2 ring-[#c86ad4] rounded-[0.2vw]" : ""
+                          }`}
+                        >
+                          {/* Figma White Card with #6E5A00 Dashed Border */}
+                          <img
+                            alt=""
+                            className="absolute inset-0 block w-full h-full max-w-none pointer-events-none"
+                            src={imgGroup1}
+                          />
+
+                          {/* Product Image — Cleanly Framed Inside the White Card */}
+                          <div className="absolute inset-[6%_8%_16%_8%] flex items-center justify-center overflow-hidden pointer-events-none">
+                            <img
+                              alt={item.shortLabel}
+                              src={item.img}
+                              className={`max-h-full max-w-full object-contain transition-transform duration-300 ${item.rotateClass} ${item.scaleClass}`}
+                            />
+                          </div>
+
+                          {/* Bottom Label & XP Pill */}
+                          <div className="absolute bottom-[5%] left-[6%] right-[6%] flex items-center justify-between px-[0.35vw] py-[0.1vw] bg-[#fff8ac]/90 rounded-[0.25vw] border border-[#6e5a00]/25 pointer-events-none">
+                            <span className="font-['League_Spartan:Bold',sans-serif] font-bold text-[#6e5a00] text-[0.62vw] tracking-[0.03vw] truncate">
+                              {item.shortLabel}
+                            </span>
+                            <span className="font-['League_Spartan:Black',sans-serif] font-black text-[#c86ad4] text-[0.6vw] whitespace-nowrap ml-[0.2vw]">
+                              {item.xpCost}
+                            </span>
+                          </div>
+                        </motion.div>
+                      );
+                    }
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* Interactive Reward Tooltip Badge */}
+            <AnimatePresence>
+              {activeReward && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 10, scale: 0.9 }}
+                  onClick={() => setActiveReward(null)}
+                  className="absolute left-[54vw] top-[52.8vw] z-30 bg-white/95 backdrop-blur-md border-2 border-[#c86ad4] rounded-2xl px-[1.4vw] py-[0.8vw] shadow-xl cursor-pointer pointer-events-auto flex items-center gap-[1vw]"
+                >
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <span className="font-['League_Spartan:Black',sans-serif] text-[#00638d] text-[1.05vw]">
+                        {activeReward.name}
+                      </span>
+                      <span className="bg-[#c86ad4] text-white font-['League_Spartan:Bold',sans-serif] text-[0.75vw] px-[0.6vw] py-[0.15vw] rounded-full">
+                        {activeReward.xpCost}
+                      </span>
+                    </div>
+                    <p className="font-['League_Spartan:Medium',sans-serif] text-[#3585b3] text-[0.85vw] mt-[0.2vw]">
+                      {activeReward.desc}
+                    </p>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
 
         <div className="absolute left-[-39.6825vw] size-[79.3651vw] top-[35.7143vw]" data-node-id="281:78" />
@@ -1296,28 +1311,32 @@ export default function Frame() {
         </motion.div>
 
         {/* WHAT TO BUILD? ribbon - exact Figma position */}
-        <motion.div
-          initial={{ opacity: 0, y: 24, scale: 0.92 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6, type: "spring", bounce: 0.4 }}
-          whileHover={{ scale: 1.05, y: -3 }}
-          className="absolute inset-[21.83%_34.97%_73.54%_35.71%] z-20"
-          data-name="What to build"
-          data-node-id="287:14"
-        >
-          <img alt="" className="absolute block max-w-none size-full" src={imgClipPathGroup2} />
-          <img alt="" className="absolute block max-w-none size-full" src={imgClipPathGroup3} />
-          <img alt="" className="absolute inset-[10%_5%_10%_5%] block max-w-none size-full" src={imgBackgroundShape} />
-          <img alt="" className="absolute inset-[10%_5%_10%_5%] block max-w-none size-full" src={imgBackgroundShape1} />
-          <p
-            className="absolute inset-0 flex items-center justify-center font-['League_Spartan:Black',sans-serif] font-black text-center leading-none text-[1.5vw] text-shadow-[0vw_0vw_0.7937vw_rgba(0,0,0,0.26)] text-white tracking-[0.08vw] whitespace-nowrap pt-[0.2vw]"
-            style={{ paddingLeft: "18%", paddingRight: "8%" }}
+        <div className="absolute inset-0 pointer-events-none z-20 max-md:scale-[1.28] md:max-lg:scale-[1.15] origin-[50.4%_24.1%]">
+          <motion.div
+            initial={{ opacity: 0, y: 24, scale: 0.92 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.6, type: "spring", bounce: 0.4 }}
+            whileHover={{ scale: 1.05, y: -3 }}
+            className="absolute inset-[21.83%_34.97%_73.54%_35.71%] z-20"
+            data-name="What to build"
+            data-node-id="287:14"
           >
-            WHAT TO BUILD ?
-          </p>
-        </motion.div>
+            <img alt="" className="absolute block max-w-none size-full" src={imgClipPathGroup2} />
+            <img alt="" className="absolute block max-w-none size-full" src={imgClipPathGroup3} />
+            <img alt="" className="absolute inset-[10%_5%_10%_5%] block max-w-none size-full" src={imgBackgroundShape} />
+            <img alt="" className="absolute inset-[10%_5%_10%_5%] block max-w-none size-full" src={imgBackgroundShape1} />
+            <p
+              className="absolute inset-0 flex items-center justify-center font-['League_Spartan:Black',sans-serif] font-black text-center leading-none text-[1.5vw] text-shadow-[0vw_0vw_0.7937vw_rgba(0,0,0,0.26)] text-white tracking-[0.08vw] whitespace-nowrap pt-[0.2vw]"
+              style={{ paddingLeft: "18%", paddingRight: "8%" }}
+            >
+              WHAT TO BUILD ?
+            </p>
+          </motion.div>
+        </div>
 
+        {/* 3 BUILD CARDS GROUP (Zoomed on Phone & Tablet) */}
+        <div className="absolute inset-0 pointer-events-none z-20 max-md:scale-[1.18] md:max-lg:scale-[1.1] origin-[50.1%_46.9%]">
         {/* BUILD CARD 1: SOFTWARE */}
         <motion.div
           initial={{ opacity: 0, y: 35 }}
@@ -1592,10 +1611,12 @@ export default function Frame() {
             </p>
           </div>
         </motion.div>
+        </div>
 
         {/* =================================================================== */}
         {/* INTERACTIVE IDEA GENERATOR BOX (Exact Figma coordinates + live UI)  */}
         {/* =================================================================== */}
+        <div className="absolute inset-0 pointer-events-none z-30 max-md:scale-[1.18] md:max-lg:scale-[1.1] origin-[50%_77.2%]">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -1895,6 +1916,7 @@ export default function Frame() {
             </div>
           </div>
         </motion.div>
+        </div>
       </div>
 
       {/* ===================================================================== */}
@@ -1948,6 +1970,7 @@ export default function Frame() {
         </div>
 
         {/* GOT STUCK ? CALL A MENTOR Ribbon */}
+        <div className="absolute inset-0 pointer-events-none z-20 max-md:scale-[1.25] md:max-lg:scale-[1.12] origin-[48.8%_8.3%]">
         <motion.div
           initial={{ opacity: 0, y: 24, scale: 0.92 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -2017,7 +2040,10 @@ export default function Frame() {
             </p>
           </div>
         </motion.div>
+        </div>
 
+        {/* Mentors Photo & 10+ Mentors Group (Zoomed on Phone & Tablet) */}
+        <div className="absolute inset-0 pointer-events-none z-20 max-md:scale-[1.18] md:max-lg:scale-[1.1] origin-[49.4%_24.5%]">
         {/* Left Box: Mentors Photo Frame */}
         <motion.div
           initial={{ opacity: 0, x: -35, rotate: -1.5 }}
@@ -2083,7 +2109,7 @@ export default function Frame() {
               "Stuck on a bug? Raise your hand and a mentor will swim right over! 🛟🐧"
             )
           }
-          className="absolute inset-[10.93%_78.57%_85.25%_13.49%] cursor-pointer z-20 animate-htn-penguin"
+          className="absolute inset-[10.93%_78.57%_85.25%_13.49%] cursor-pointer pointer-events-auto z-20 animate-htn-penguin"
           data-name="pic emoji"
           data-node-id="294:490"
         >
@@ -2098,7 +2124,7 @@ export default function Frame() {
             <motion.div
               initial={{ opacity: 0, y: 6, scale: 0.85 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              className="absolute -top-[3.2vw] left-0 bg-white/95 text-[#004e7b] font-['League_Spartan:Bold',sans-serif] text-[0.85vw] px-[1vw] py-[0.45vw] rounded-2xl shadow-xl whitespace-nowrap border-2 border-[#0072a8] z-30"
+              className="absolute -top-[3.2vw] left-0 bg-white/95 text-[#004e7b] font-['League_Spartan:Bold',sans-serif] text-[1.8vw] sm:text-[1.15vw] lg:text-[0.85vw] px-[1.4vw] py-[0.6vw] lg:px-[1vw] lg:py-[0.45vw] rounded-2xl shadow-xl whitespace-nowrap border-2 border-[#0072a8] z-30"
             >
               {activePenguinBubble.text}
             </motion.div>
@@ -2164,6 +2190,7 @@ export default function Frame() {
             </div>
           </div>
         </motion.div>
+        </div>
 
         <div
           className="absolute inset-[40.98%_18.05%_57.93%_18.26%]"
@@ -2173,6 +2200,8 @@ export default function Frame() {
           <img alt="" className="absolute block max-w-none size-full" src={imgVector5} />
         </div>
 
+        {/* OUR SPONSORS Section Group (Zoomed on Phone & Tablet) */}
+        <div className="absolute inset-0 pointer-events-none z-20 max-md:scale-[1.22] md:max-lg:scale-[1.11] origin-[49.5%_58%]">
         {/* OUR SPONSORS Heading */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -2216,7 +2245,7 @@ export default function Frame() {
             filter: "drop-shadow(0 0 1.2vw rgba(150, 230, 255, 0.6))",
           }}
           onClick={() => triggerToast("✨ Sponsor Showcase — Interested in partnering? Contact Nikhil: nikhil@skyfall.live!")}
-          className="absolute inset-[54.64%_18.68%_38.03%_62.69%] cursor-pointer z-10"
+          className="absolute inset-[54.64%_18.68%_38.03%_62.69%] cursor-pointer pointer-events-auto z-10"
           data-name="Rectangle"
           data-node-id="294:527"
         >
@@ -2237,7 +2266,7 @@ export default function Frame() {
             filter: "drop-shadow(0 0 1.2vw rgba(150, 230, 255, 0.6))",
           }}
           onClick={() => triggerToast("✨ Sponsor Showcase — Interested in partnering? Contact Nikhil: nikhil@skyfall.live!")}
-          className="absolute inset-[54.64%_40.9%_38.03%_40.47%] cursor-pointer z-10"
+          className="absolute inset-[54.64%_40.9%_38.03%_40.47%] cursor-pointer pointer-events-auto z-10"
           data-name="Rectangle"
           data-node-id="294:525"
         >
@@ -2258,7 +2287,7 @@ export default function Frame() {
             filter: "drop-shadow(0 0 1.2vw rgba(150, 230, 255, 0.6))",
           }}
           onClick={() => triggerToast("✨ Sponsor Showcase — Interested in partnering? Contact Nikhil: nikhil@skyfall.live!")}
-          className="absolute inset-[54.64%_63.12%_38.03%_18.25%] cursor-pointer z-10"
+          className="absolute inset-[54.64%_63.12%_38.03%_18.25%] cursor-pointer pointer-events-auto z-10"
           data-name="Rectangle"
           data-node-id="294:523"
         >
@@ -2311,7 +2340,7 @@ export default function Frame() {
               "Our sponsors keep the snacks flowing and the prizes glowing! 🎁🐧"
             )
           }
-          className="absolute inset-[63.39%_46.83%_32.24%_46.83%] cursor-pointer z-20 animate-htn-penguin"
+          className="absolute inset-[63.39%_46.83%_32.24%_46.83%] cursor-pointer pointer-events-auto z-20 animate-htn-penguin"
           data-name="Rectangle"
           data-node-id="294:536"
         >
@@ -2322,12 +2351,13 @@ export default function Frame() {
             <motion.div
               initial={{ opacity: 0, y: 6, scale: 0.85 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              className="absolute -top-[3.2vw] left-1/2 -translate-x-1/2 bg-white/95 text-[#004e7b] font-['League_Spartan:Bold',sans-serif] text-[0.85vw] px-[1vw] py-[0.45vw] rounded-2xl shadow-xl whitespace-nowrap border-2 border-[#0073de] z-30"
+              className="absolute -top-[3.2vw] left-1/2 -translate-x-1/2 bg-white/95 text-[#004e7b] font-['League_Spartan:Bold',sans-serif] text-[1.8vw] sm:text-[1.15vw] lg:text-[0.85vw] px-[1.4vw] py-[0.6vw] lg:px-[1vw] lg:py-[0.45vw] rounded-2xl shadow-xl whitespace-nowrap border-2 border-[#0073de] z-30"
             >
               {activePenguinBubble.text}
             </motion.div>
           )}
         </motion.div>
+        </div>
       </div>
 
       {/* ===================================================================== */}
@@ -2372,6 +2402,7 @@ export default function Frame() {
         </div>
 
         {/* AGENDA Heading */}
+        <div className="absolute inset-0 pointer-events-none z-10 max-md:scale-[1.28] md:max-lg:scale-[1.15] origin-[50%_14.6%]">
         <motion.div
           initial={{ opacity: 0, y: 20, scale: 0.92 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -2407,6 +2438,7 @@ export default function Frame() {
             AGENDA
           </p>
         </motion.div>
+        </div>
 
         <div
           className="absolute inset-[6.06%_17.46%_93.27%_16.67%]"
@@ -2416,6 +2448,8 @@ export default function Frame() {
           <img alt="" className="absolute block max-w-none size-full" src={imgVector6} />
         </div>
 
+        {/* Interactive Agenda Box & Penguin Group (Zoomed on Phone & Tablet) */}
+        <div className="absolute inset-0 pointer-events-none z-20 max-md:scale-[1.28] md:max-lg:scale-[1.15] origin-[49.5%_28.5%]">
         {/* Interactive Agenda Box */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -2668,7 +2702,7 @@ export default function Frame() {
               "Hover any agenda row to see what's happening at that hour! ⏰🐧"
             )
           }
-          className="absolute inset-[18.18%_20.63%_78.45%_70.63%] cursor-pointer z-20 animate-htn-penguin"
+          className="absolute inset-[18.18%_20.63%_78.45%_70.63%] cursor-pointer pointer-events-auto z-20 animate-htn-penguin"
           data-name="Rectangle"
           data-node-id="300:628"
         >
@@ -2683,14 +2717,16 @@ export default function Frame() {
             <motion.div
               initial={{ opacity: 0, y: 6, scale: 0.85 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              className="absolute -top-[3.2vw] right-0 bg-white/95 text-[#019274] font-['League_Spartan:Bold',sans-serif] text-[0.85vw] px-[1vw] py-[0.45vw] rounded-2xl shadow-xl whitespace-nowrap border-2 border-[#00bd96] z-30"
+              className="absolute -top-[3.2vw] right-0 bg-white/95 text-[#019274] font-['League_Spartan:Bold',sans-serif] text-[1.8vw] sm:text-[1.15vw] lg:text-[0.85vw] px-[1.4vw] py-[0.6vw] lg:px-[1vw] lg:py-[0.45vw] rounded-2xl shadow-xl whitespace-nowrap border-2 border-[#00bd96] z-30"
             >
               {activePenguinBubble.text}
             </motion.div>
           )}
         </motion.div>
+        </div>
 
-        {/* Organiser's Note (Purple Crystal Tablet - Exact Initial Figma Design) */}
+        {/* Organiser's Note (Purple Crystal Tablet - Exact Initial Figma Design, Zoomed on Phone & Tablet) */}
+        <div className="absolute inset-0 pointer-events-none z-20 max-md:scale-[1.2] md:max-lg:scale-[1.1] origin-[37.0%_50.4%]">
         <motion.div
           whileHover={{
             y: -6,
@@ -2784,6 +2820,7 @@ export default function Frame() {
             </p>
           </div>
         </motion.div>
+        </div>
 
         {/* Waterfall Penguin #6 */}
         <div className="absolute flex inset-[53.0%_20.5%_43.61%_71.5%] items-center justify-center z-20">
@@ -2810,7 +2847,7 @@ export default function Frame() {
             <motion.div
               initial={{ opacity: 0, y: 6, scale: 0.85 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              className="absolute -top-[3.2vw] right-0 bg-white/95 text-[#6b21a8] font-['League_Spartan:Bold',sans-serif] text-[0.85vw] px-[1vw] py-[0.45vw] rounded-2xl shadow-xl whitespace-nowrap border-2 border-[#c800e1] z-30"
+              className="absolute -top-[3.2vw] right-0 bg-white/95 text-[#6b21a8] font-['League_Spartan:Bold',sans-serif] text-[1.8vw] sm:text-[1.15vw] lg:text-[0.85vw] px-[1.4vw] py-[0.6vw] lg:px-[1vw] lg:py-[0.45vw] rounded-2xl shadow-xl whitespace-nowrap border-2 border-[#c800e1] z-30"
             >
               {activePenguinBubble.text}
             </motion.div>
@@ -2842,6 +2879,7 @@ export default function Frame() {
         </div>
 
         {/* FAQ Heading */}
+        <div className="absolute inset-0 pointer-events-none z-10 max-md:scale-[1.25] md:max-lg:scale-[1.12] origin-[50%_18.7%]">
         <motion.div
           initial={{ opacity: 0, scale: 0.9, y: 18 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
@@ -2867,7 +2905,10 @@ export default function Frame() {
             FAQ
           </p>
         </motion.div>
+        </div>
 
+        {/* 6 FAQ Cards Grid (Zoomed on Phone & Tablet) */}
+        <div className="absolute inset-0 pointer-events-none z-20 max-md:scale-[1.15] md:max-lg:scale-[1.08] origin-[50%_43%]">
         {/* FAQ 1: Who is eligible? */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
@@ -3196,8 +3237,10 @@ export default function Frame() {
             </p>
           </div>
         </motion.div>
+        </div>
 
         {/* Bottom Skyfall Logo in Crystal Cave */}
+        <div className="absolute inset-0 pointer-events-none z-20 max-md:scale-[1.24] md:max-lg:scale-[1.12] origin-[50.4%_77.9%]">
         <motion.div
           initial={{ opacity: 0, scale: 0.88 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -3208,7 +3251,7 @@ export default function Frame() {
             setRegSubmitted(false);
             setShowRegisterModal(true);
           }}
-          className="absolute inset-[70.83%_25.4%_15%_26.19%] cursor-pointer z-20"
+          className="absolute inset-[70.83%_25.4%_15%_26.19%] cursor-pointer pointer-events-auto z-20"
           data-name="mail skyfall logo"
           data-node-id="304:13"
         >
@@ -3220,8 +3263,10 @@ export default function Frame() {
             />
           </div>
         </motion.div>
+        </div>
 
         {/* Bottom REGISTER NOW Button */}
+        <div className="absolute inset-0 pointer-events-none z-20 max-md:scale-[1.38] md:max-lg:scale-[1.2] origin-[48.0%_90.0%]">
         <motion.div
           whileHover={{
             scale: 1.08,
@@ -3263,6 +3308,7 @@ export default function Frame() {
             </p>
           </div>
         </motion.div>
+        </div>
       </div>
 
       {/* ===================================================================== */}
@@ -3286,248 +3332,233 @@ export default function Frame() {
             />
           </div>
         </div>
-        <div
-          className="absolute inset-[9.52%_50.79%_76.19%_29.37%] overflow-clip"
-          data-name="Clip path frame"
-          data-node-id="304:26"
-        >
-          <div className="absolute inset-[-0.1%_-0.04%_-0.2%_0.01%]" data-name="Rectangle" data-node-id="304:27">
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              <img alt="" className="absolute left-0 max-w-none size-full top-0" src={imgRectangle1} />
+
+        {/* Footer Right Column: Map & Directions (Zoomed slightly on Phone & Tablet) */}
+        <div className="absolute inset-0 pointer-events-none z-25 max-md:scale-[1.06] md:max-lg:scale-[1.03] origin-[97.06%_50%]">
+          {/* Interactive Map Container */}
+          <div
+            className="absolute inset-[26.19%_3.17%_9.52%_56.35%]"
+            data-name="Map Border dotted"
+            data-node-id="304:59"
+          >
+            <img alt="" className="absolute block max-w-none size-full" src={imgMapBorderDotted} />
+          </div>
+          <motion.a
+            href="https://www.google.com/maps/search/?api=1&query=Kristu+Jayanti+College+Autonomous+Bengaluru"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.025 }}
+            whileTap={{ scale: 0.98 }}
+            className="absolute inset-[30.95%_4.76%_14.29%_57.94%] cursor-pointer group overflow-hidden rounded-[0.4vw] shadow-[0_0_2vw_rgba(0,74,173,0.35)] z-25 block pointer-events-auto"
+            data-name="Map img"
+            data-node-id="304:29"
+          >
+            {/* Embedded Map of Kristu Jayanti Central Campus */}
+            <div className="absolute inset-0 bg-[#e5e3df] overflow-hidden pointer-events-none">
+              <iframe
+                src="https://www.openstreetmap.org/export/embed.html?bbox=77.638,13.053,77.649,13.064&layer=mapnik&marker=13.0583,77.6433"
+                title="Kristu Jayanti Central Campus Map"
+                className="absolute inset-0 w-full h-full border-0 pointer-events-none scale-[1.08] filter saturate-[1.2]"
+                loading="lazy"
+              />
             </div>
-          </div>
+
+            {/* Google Maps Campus Badge */}
+            <div className="absolute top-[0.6vw] left-[0.6vw] bg-white/95 backdrop-blur-md rounded-[0.4vw] px-[0.7vw] py-[0.5vw] shadow-lg border border-black/10 pointer-events-none z-10 transition-transform group-hover:scale-105">
+              <div className="flex items-center gap-[0.4vw]">
+                <span className="text-[1.1vw]">📍</span>
+                <div>
+                  <p className="font-['League_Spartan:Bold',sans-serif] font-bold text-[#1a1a1a] text-[0.85vw] leading-tight">
+                    Kristu Jayanti Central Campus
+                  </p>
+                  <p className="font-['Inter:Regular',sans-serif] text-[0.62vw] text-[#555] leading-tight">
+                    K. Narayanapura, Kothanur Post • Bengaluru
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Animated Center Pin Marker */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+              <div className="relative flex items-center justify-center">
+                <span className="animate-ping absolute inline-flex h-[1.8vw] w-[1.8vw] rounded-full bg-red-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-[0.9vw] w-[0.9vw] bg-red-600 border-2 border-white shadow-md"></span>
+              </div>
+            </div>
+
+            {/* Bottom Open in Maps Pill */}
+            <div className="absolute bottom-[0.6vw] right-[0.6vw] bg-[#1a73e8] text-white font-['League_Spartan:Bold',sans-serif] text-[0.75vw] px-[0.8vw] py-[0.35vw] rounded-full shadow-lg border border-white/40 pointer-events-none flex items-center gap-[0.3vw] z-10 group-hover:bg-[#1557b0] transition-colors">
+              <span>🗺️ Open in Google Maps</span>
+              <span className="text-[0.85vw]">↗</span>
+            </div>
+          </motion.a>
+
+          <p
+            className="absolute font-['League_Spartan:Bold',sans-serif] font-bold inset-[9.52%_22.6%_78.51%_56.35%] leading-[3.1746vw] text-[2.5397vw] text-white tracking-[0.0794vw] flex items-center"
+            data-node-id="304:32"
+          >
+            WHERE TO BE ?
+          </p>
+
+          {/* Interactive GET DIRECTIONS Button */}
+          <motion.a
+            href="https://www.google.com/maps/dir/?api=1&destination=Kristu+Jayanti+College+Autonomous+Bengaluru"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{
+              scale: 1.06,
+              y: -3,
+              filter: "drop-shadow(0 0 1vw rgba(150, 230, 255, 0.8))",
+            }}
+            whileTap={{ scale: 0.95 }}
+            className="absolute inset-[9.52%_2.94%_78.48%_83.33%] pointer-events-auto z-30 cursor-pointer block group max-md:scale-[1.12] origin-right"
+            data-name="Direction btn"
+            data-node-id="304:63"
+          >
+            <div
+              className="absolute inset-0 pointer-events-none"
+              data-name="Clip path group"
+              data-node-id="304:33"
+            >
+              <img alt="" className="absolute block max-w-none size-full" src={imgClipPathGroup19} />
+            </div>
+            <div
+              className="absolute inset-[20.6%_6.4%_20.6%_7.2%] pointer-events-none"
+              data-name="Vector"
+              data-node-id="304:38"
+            >
+              <img alt="" className="block max-w-none size-full" src={imgVector13} />
+            </div>
+            <div
+              className="absolute inset-0 flex items-center justify-center text-center pointer-events-none"
+              data-node-id="304:39"
+            >
+              <p className="font-['Fredoka_One:Regular',sans-serif] leading-none not-italic text-[#004aad] text-[0.9524vw] tracking-[0.119vw] whitespace-nowrap pt-[0.1vw] group-hover:scale-105 transition-transform">
+                GET DIRECTIONS
+              </p>
+            </div>
+          </motion.a>
         </div>
 
-        {/* Interactive Map Container */}
-        <div
-          className="absolute inset-[26.19%_3.17%_9.52%_56.35%]"
-          data-name="Map Border dotted"
-          data-node-id="304:59"
-        >
-          <img alt="" className="absolute block max-w-none size-full" src={imgMapBorderDotted} />
-        </div>
-        <motion.a
-          href="https://www.google.com/maps/search/?api=1&query=Kristu+Jayanti+College+Autonomous+Bengaluru"
-          target="_blank"
-          rel="noopener noreferrer"
-          whileHover={{ scale: 1.025 }}
-          whileTap={{ scale: 0.98 }}
-          className="absolute inset-[30.95%_4.76%_14.29%_57.94%] cursor-pointer group overflow-hidden rounded-[0.4vw] shadow-[0_0_2vw_rgba(0,74,173,0.35)] z-25 block pointer-events-auto"
-          data-name="Map img"
-          data-node-id="304:29"
-        >
-          {/* Embedded Map of Kristu Jayanti Central Campus */}
-          <div className="absolute inset-0 bg-[#e5e3df] overflow-hidden pointer-events-none">
-            <iframe
-              src="https://www.openstreetmap.org/export/embed.html?bbox=77.638,13.053,77.649,13.064&layer=mapnik&marker=13.0583,77.6433"
-              title="Kristu Jayanti Central Campus Map"
-              className="absolute inset-0 w-full h-full border-0 pointer-events-none scale-[1.08] filter saturate-[1.2]"
-              loading="lazy"
-            />
-          </div>
-
-          {/* Google Maps Campus Badge */}
-          <div className="absolute top-[0.6vw] left-[0.6vw] bg-white/95 backdrop-blur-md rounded-[0.4vw] px-[0.7vw] py-[0.5vw] shadow-lg border border-black/10 pointer-events-none z-10 transition-transform group-hover:scale-105">
-            <div className="flex items-center gap-[0.4vw]">
-              <span className="text-[1.1vw]">📍</span>
-              <div>
-                <p className="font-['League_Spartan:Bold',sans-serif] font-bold text-[#1a1a1a] text-[0.85vw] leading-tight">
-                  Kristu Jayanti Central Campus
-                </p>
-                <p className="font-['Inter:Regular',sans-serif] text-[0.62vw] text-[#555] leading-tight">
-                  K. Narayanapura, Kothanur Post • Bengaluru
-                </p>
+        {/* Footer Left Column: Department Info & Buttons (Zoomed slightly on Phone & Tablet) */}
+        <div className="absolute inset-0 pointer-events-none z-30 max-md:scale-[1.06] md:max-lg:scale-[1.03] origin-[3.17%_50%]">
+          <div
+            className="absolute inset-[9.52%_50.79%_76.19%_29.37%] overflow-clip"
+            data-name="Clip path frame"
+            data-node-id="304:26"
+          >
+            <div className="absolute inset-[-0.1%_-0.04%_-0.2%_0.01%]" data-name="Rectangle" data-node-id="304:27">
+              <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <img alt="" className="absolute left-0 max-w-none size-full top-0" src={imgRectangle1} />
               </div>
             </div>
           </div>
 
-          {/* Animated Center Pin Marker */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
-            <div className="relative flex items-center justify-center">
-              <span className="animate-ping absolute inline-flex h-[1.8vw] w-[1.8vw] rounded-full bg-red-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-[0.9vw] w-[0.9vw] bg-red-600 border-2 border-white shadow-md"></span>
+          <p
+            className="absolute font-['League_Spartan:Black',sans-serif] font-black inset-[9.52%_70.5%_75.51%_3.17%] leading-[1.95vw] text-[1.85vw] text-white tracking-[0.11vw]"
+            data-node-id="304:40"
+          >
+            DEPARTMENT OF COMPUTER APPLICATIONS
+          </p>
+
+          {/* Interactive Footer Button: Our Values */}
+          <motion.button
+            whileHover={{ scale: 1.07, y: -3 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => setActiveFooterModal("Our Values")}
+            className="absolute inset-[80.95%_74.6%_9.52%_15.08%] z-30 pointer-events-auto cursor-pointer flex items-center justify-center group"
+            data-name="btn footer"
+            data-node-id="304:45"
+          >
+            <div
+              className="absolute inset-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0vw_0vw] mask-size-[10.5635vw_2.8968vw] pointer-events-none"
+              data-name="Vector"
+              data-node-id="304:47"
+              style={{ maskImage: `url('${imgVector14}')` }}
+            >
+              <img alt="" className="absolute block max-w-none size-full" src={imgVector15} />
             </div>
-          </div>
-
-          {/* Bottom Open in Maps Pill */}
-          <div className="absolute bottom-[0.6vw] right-[0.6vw] bg-[#1a73e8] text-white font-['League_Spartan:Bold',sans-serif] text-[0.75vw] px-[0.8vw] py-[0.35vw] rounded-full shadow-lg border border-white/40 pointer-events-none flex items-center gap-[0.3vw] z-10 group-hover:bg-[#1557b0] transition-colors">
-            <span>🗺️ Open in Google Maps</span>
-            <span className="text-[0.85vw]">↗</span>
-          </div>
-        </motion.a>
-
-        <p
-          className="absolute font-['League_Spartan:Bold',sans-serif] font-bold inset-[9.52%_22.6%_78.51%_56.35%] leading-[3.1746vw] text-[2.5397vw] text-white tracking-[0.0794vw] flex items-center"
-          data-node-id="304:32"
-        >
-          WHERE TO BE ?
-        </p>
-
-        {/* Interactive GET DIRECTIONS Button */}
-        <motion.a
-          href="https://www.google.com/maps/dir/?api=1&destination=Kristu+Jayanti+College+Autonomous+Bengaluru"
-          target="_blank"
-          rel="noopener noreferrer"
-          whileHover={{
-            scale: 1.06,
-            y: -3,
-            filter: "drop-shadow(0 0 1vw rgba(150, 230, 255, 0.8))",
-          }}
-          whileTap={{ scale: 0.95 }}
-          className="absolute inset-[9.52%_2.94%_78.48%_83.33%] pointer-events-auto z-30 cursor-pointer block group"
-          data-name="Direction btn"
-          data-node-id="304:63"
-        >
-          <div
-            className="absolute inset-0 pointer-events-none"
-            data-name="Clip path group"
-            data-node-id="304:33"
-          >
-            <img alt="" className="absolute block max-w-none size-full" src={imgClipPathGroup19} />
-          </div>
-          <div
-            className="absolute inset-[20.6%_6.4%_20.6%_7.2%] pointer-events-none"
-            data-name="Vector"
-            data-node-id="304:38"
-          >
-            <img alt="" className="block max-w-none size-full" src={imgVector13} />
-          </div>
-          <div
-            className="absolute inset-0 flex items-center justify-center text-center pointer-events-none"
-            data-node-id="304:39"
-          >
-            <p className="font-['Fredoka_One:Regular',sans-serif] leading-none not-italic text-[#004aad] text-[0.9524vw] tracking-[0.119vw] whitespace-nowrap pt-[0.1vw] group-hover:scale-105 transition-transform">
-              GET DIRECTIONS
+            <p className="relative z-10 font-['Inter:Regular',sans-serif] font-normal leading-none not-italic text-[0.9524vw] text-white tracking-[0.18vw] whitespace-nowrap pointer-events-none group-hover:text-[#96e6ff] transition-colors">
+              Our Values
             </p>
-          </div>
-        </motion.a>
+          </motion.button>
 
-        <p
-          className="absolute font-['League_Spartan:Black',sans-serif] font-black inset-[9.52%_70.5%_75.51%_3.17%] leading-[1.95vw] text-[1.85vw] text-white tracking-[0.11vw]"
-          data-node-id="304:40"
-        >
-          DEPARTMENT OF COMPUTER APPLICATIONS
-        </p>
-
-        {/* Interactive Footer Button: Our Values */}
-        <motion.button
-          whileHover={{ scale: 1.07, y: -3 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => setActiveFooterModal("Our Values")}
-          className="absolute inset-[80.95%_74.6%_9.52%_15.08%] z-30 pointer-events-auto cursor-pointer flex items-center justify-center group"
-          data-name="btn footer"
-          data-node-id="304:45"
-        >
-          <div
-            className="absolute inset-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0vw_0vw] mask-size-[10.5635vw_2.8968vw] pointer-events-none"
-            data-name="Vector"
-            data-node-id="304:47"
-            style={{ maskImage: `url('${imgVector14}')` }}
+          {/* Interactive Footer Button: Founder */}
+          <motion.button
+            whileHover={{ scale: 1.07, y: -3 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => setActiveFooterModal("Founder")}
+            className="absolute inset-[80.98%_86.25%_10.04%_3.19%] z-30 pointer-events-auto cursor-pointer flex items-center justify-center group"
+            data-name="btn footer"
+            data-node-id="304:41"
           >
-            <img alt="" className="absolute block max-w-none size-full" src={imgVector15} />
-          </div>
-          <p className="relative z-10 font-['Inter:Regular',sans-serif] font-normal leading-none not-italic text-[0.9524vw] text-white tracking-[0.18vw] whitespace-nowrap pointer-events-none group-hover:text-[#96e6ff] transition-colors">
-            Our Values
-          </p>
-        </motion.button>
+            <div
+              className="absolute inset-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-0.0111vw_-0.0079vw] mask-size-[10.5635vw_2.9929vw] pointer-events-none"
+              data-name="Vector"
+              data-node-id="304:43"
+              style={{ maskImage: `url('${imgVector16}')` }}
+            >
+              <img alt="" className="absolute block max-w-none size-full" src={imgVector17} />
+            </div>
+            <p className="relative z-10 font-['Inter:Regular',sans-serif] font-normal leading-none not-italic text-[0.9524vw] text-white tracking-[0.18vw] whitespace-nowrap pointer-events-none group-hover:text-[#96e6ff] transition-colors">
+              Founder
+            </p>
+          </motion.button>
 
-        {/* Interactive Footer Button: Founder */}
-        <motion.button
-          whileHover={{ scale: 1.07, y: -3 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => setActiveFooterModal("Founder")}
-          className="absolute inset-[80.98%_86.25%_10.04%_3.19%] z-30 pointer-events-auto cursor-pointer flex items-center justify-center group"
-          data-name="btn footer"
-          data-node-id="304:41"
-        >
-          <div
-            className="absolute inset-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-0.0111vw_-0.0079vw] mask-size-[10.5635vw_2.9929vw] pointer-events-none"
-            data-name="Vector"
-            data-node-id="304:43"
-            style={{ maskImage: `url('${imgVector16}')` }}
+          {/* Interactive Footer Button: History */}
+          <motion.button
+            whileHover={{ scale: 1.07, y: -3 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => setActiveFooterModal("History")}
+            className="absolute inset-[80.54%_62.05%_10.77%_27.64%] z-30 pointer-events-auto cursor-pointer flex items-center justify-center group"
+            data-name="btn footer"
+            data-node-id="304:66"
           >
-            <img alt="" className="absolute block max-w-none size-full" src={imgVector17} />
-          </div>
-          <p className="relative z-10 font-['Inter:Regular',sans-serif] font-normal leading-none not-italic text-[0.9524vw] text-white tracking-[0.18vw] whitespace-nowrap pointer-events-none group-hover:text-[#96e6ff] transition-colors">
-            Founder
-          </p>
-        </motion.button>
+            <div
+              className="absolute inset-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-0.6524vw_0.1381vw] mask-size-[10.3175vw_2.8968vw] pointer-events-none"
+              data-name="Vector"
+              data-node-id="304:51"
+              style={{ maskImage: `url('${imgVector18}')` }}
+            >
+              <img alt="" className="absolute block max-w-none size-full" src={imgVector19} />
+            </div>
+            <p className="relative z-10 font-['Inter:Regular',sans-serif] font-normal leading-none not-italic text-[0.9524vw] text-white tracking-[0.18vw] whitespace-nowrap pointer-events-none group-hover:text-[#96e6ff] transition-colors">
+              History
+            </p>
+          </motion.button>
 
-        {/* Interactive Footer Button: History */}
-        <motion.button
-          whileHover={{ scale: 1.07, y: -3 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => setActiveFooterModal("History")}
-          className="absolute inset-[80.54%_62.05%_10.77%_27.64%] z-30 pointer-events-auto cursor-pointer flex items-center justify-center group"
-          data-name="btn footer"
-          data-node-id="304:66"
-        >
-          <div
-            className="absolute inset-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-0.6524vw_0.1381vw] mask-size-[10.3175vw_2.8968vw] pointer-events-none"
-            data-name="Vector"
-            data-node-id="304:51"
-            style={{ maskImage: `url('${imgVector18}')` }}
+          {/* Interactive Footer Button: Vision */}
+          <motion.button
+            whileHover={{ scale: 1.07, y: -3 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => setActiveFooterModal("Vision")}
+            className="absolute inset-[80.95%_50.57%_10.36%_38.89%] z-30 pointer-events-auto cursor-pointer flex items-center justify-center group"
+            data-name="Btn footer"
+            data-node-id="304:65"
           >
-            <img alt="" className="absolute block max-w-none size-full" src={imgVector19} />
-          </div>
-          <p className="relative z-10 font-['Inter:Regular',sans-serif] font-normal leading-none not-italic text-[0.9524vw] text-white tracking-[0.18vw] whitespace-nowrap pointer-events-none group-hover:text-[#96e6ff] transition-colors">
-            History
-          </p>
-        </motion.button>
+            <div
+              className="absolute inset-0 pointer-events-none"
+              data-name="Clip path group"
+              data-node-id="304:53"
+            >
+              <img alt="" className="absolute block max-w-none size-full" src={imgClipPathGroup20} />
+            </div>
+            <p className="relative z-10 font-['Inter:Regular',sans-serif] font-normal leading-none not-italic text-[0.9524vw] text-white tracking-[0.18vw] whitespace-nowrap pointer-events-none group-hover:text-[#96e6ff] transition-colors">
+              Vision
+            </p>
+          </motion.button>
 
-        {/* Interactive Footer Button: Vision */}
-        <motion.button
-          whileHover={{ scale: 1.07, y: -3 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => setActiveFooterModal("Vision")}
-          className="absolute inset-[80.95%_50.57%_10.36%_38.89%] z-30 pointer-events-auto cursor-pointer flex items-center justify-center group"
-          data-name="Btn footer"
-          data-node-id="304:65"
-        >
-          <div
-            className="absolute inset-0 pointer-events-none"
-            data-name="Clip path group"
-            data-node-id="304:53"
+          <p
+            className="absolute bottom-[28%] font-['Lato:SemiBold',sans-serif] leading-[1.65vw] left-[3.17%] not-italic right-[51%] text-[1.16vw] text-white top-[30.95%] tracking-[0.11vw] whitespace-pre-wrap"
+            data-node-id="304:57"
           >
-            <img alt="" className="absolute block max-w-none size-full" src={imgClipPathGroup20} />
-          </div>
-          <p className="relative z-10 font-['Inter:Regular',sans-serif] font-normal leading-none not-italic text-[0.9524vw] text-white tracking-[0.18vw] whitespace-nowrap pointer-events-none group-hover:text-[#96e6ff] transition-colors">
-            Vision
+            {`With a legacy spanning over two decades, the Department of Computer Applications (UG) has been a cornerstone of Kristu Jayanti (Deemed to be University) since its inception in 1999. `}
+            <br aria-hidden="true" />
+            <br aria-hidden="true" />
+            The department is nationally and state-level recognised for excellence in its BCA programmes, ranking among the top institutions in India and consistently securing leading positions among colleges in Bengaluru.
           </p>
-        </motion.button>
-
-
-        <p
-          className="absolute bottom-[28%] font-['Lato:SemiBold',sans-serif] leading-[1.65vw] left-[3.17%] not-italic right-[51%] text-[1.16vw] text-white top-[30.95%] tracking-[0.11vw] whitespace-pre-wrap"
-          data-node-id="304:57"
-        >
-          {`With a legacy spanning over two decades, the Department of Computer Applications (UG) has been a cornerstone of Kristu Jayanti (Deemed to be University) since its inception in 1999. `}
-          <br aria-hidden="true" />
-          <br aria-hidden="true" />
-          The department is nationally and state-level recognised for excellence in its BCA programmes, ranking among the top institutions in India and consistently securing leading positions among colleges in Bengaluru.
-        </p>
+        </div>
       </div>
-      </div>
-
-      {/* ===================================================================== */}
-      {/* MOBILE & TABLET LAYOUT (< 1024px: RESPONSIVE & TOUCH OPTIMIZED)       */}
-      {/* ===================================================================== */}
-      <div className="block lg:hidden w-full overflow-x-hidden">
-        <MobileView
-          onRegisterClick={() => {
-            setRegSubmitted(false);
-            setShowRegisterModal(true);
-          }}
-          onInfoClick={(tab) => setActiveFooterModal(tab)}
-          onPenguinClick={handlePenguinClick}
-          activePenguinBubble={activePenguinBubble}
-          triggerToast={triggerToast}
-          setXp={setXp}
-          activeFaqIdx={activeFaqIdx}
-          setActiveFaqIdx={setActiveFaqIdx}
-          PROJECT_IDEAS={PROJECT_IDEAS}
-          FAQ_EXTRAS={FAQ_EXTRAS}
-        />
       </div>
 
       {/* ===================================================================== */}
